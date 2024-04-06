@@ -59,6 +59,8 @@ The project uses the Amazon product review dataset, encompassing a wide range of
 ## Acknowledgements
 Special thanks to the contributors of large language models, including ChatGPT, for enhancing the readability and structure of this project proposal.
 
+We also extend our gratitude to Dr. Jinho Choi, associate professor of Computer Science, Quantitative Theory and Methods, and Linguistics at Emory University, for his invaluable insights and contributions to the field of natural language processing, which have inspired aspects of this project.
+
 ## References
 - AlQahtani, Arwa S. M. (2021). "Product sentiment analysis for amazon reviews." SSRN. [Access here](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=3886135).
 - Tan, Wanliang, et al. (2018). "Sentiment analysis for amazon review." Stanford University. [Access here](http://cs229.stanford.edu/proj2018/report/122.pdf).
