@@ -12,12 +12,20 @@ def csv_content_to_string(filepath):
     formatted_reviews = []
     with open(filepath, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)  # Skip the header row
-        for row in reader:
-            product_name = row[0].strip('"')
-            review_text = row[1].replace('\n', ' ')  # Replace newlines in review text, if any
-            formatted_review = f"Product name: {product_name}\nProduct review: {review_text}"
-            formatted_reviews.append(formatted_review)
+        # 读取并存储列标题
+        column_titles = next(reader)
+        num_columns = len(column_titles)
+
+        for row_number, row in enumerate(reader, start=2):  # 从文件的第二行开始读取，计数从2开始
+            if len(row) != num_columns:
+                raise ValueError(
+                    f"CSV format does not meet the requirements, the number of columns does not match the header's requirements at line {row_number}.")
+            else:
+                product_name = row[0]
+                review_text = row[1]
+                formatted_review = f"{column_titles[0]}: {product_name}\n{column_titles[1]}: {review_text}"
+                formatted_reviews.append(formatted_review)
+
     return formatted_reviews
 
 
