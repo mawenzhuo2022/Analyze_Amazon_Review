@@ -5,21 +5,34 @@ from dotenv import load_dotenv
 
 
 
-# convert the csv content to string: 
+
+
+
 def csv_content_to_string(filepath):
-    content = []
+    formatted_reviews = []
     with open(filepath, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)  # Skip the header row
         for row in reader:
-            # Join the columns with commas and append to the content list
-            content.append(','.join(row))
-    # Join all rows into a single string, separating rows with new lines
-    return '\n'.join(content)
+            product_name = row[0].strip('"')
+            review_text = row[1].replace('\n', ' ')  # Replace newlines in review text, if any
+            formatted_review = f"Product name: {product_name}\nProduct review: {review_text}"
+            formatted_reviews.append(formatted_review)
+    return formatted_reviews
 
 
 if __name__ == "__main__":
-    csvcontent = csv_content_to_string()
+    # filepath
+    filepath = "../../dat/prompt1/data_jeans.csv"
 
+    # testcase ########################################
+    reviews = csv_content_to_string(filepath)
+    for review in reviews[:5]:  # 打印前5条评论作为示例
+        print(review)
+        print("-----")
+    ###################################################
+
+    csvcontent = csv_content_to_string(filepath)
     # load environment variable 
     load_dotenv()
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
@@ -44,6 +57,7 @@ if __name__ == "__main__":
     except Exception as e:
         # If there was an error, print the error message
         print(f"Error: {e}")
+
 
 
 
