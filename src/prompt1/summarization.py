@@ -2,7 +2,7 @@ import os
 import csv
 from openai import OpenAI
 from dotenv import load_dotenv
-
+import gradio as gr
 
 
 
@@ -12,13 +12,13 @@ def csv_content_to_string(filepath):
     formatted_reviews = []
     with open(filepath, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
-        # 读取并存储列标题
+        # read and save column heads
         column_titles = next(reader)
         num_columns = len(column_titles)
 
-        for row_number, row in enumerate(reader, start=2):  # 从文件的第二行开始读取，计数从2开始
-            if len(formatted_reviews) >= 80:  # 只处理前80条评论
-                break  # 超过80条时停止添加
+        for row_number, row in enumerate(reader, start=2):  # read from second line of data
+            if len(formatted_reviews) >= 5:
+                break  # set adding limit to 80
             if len(row) != num_columns:
                 raise ValueError(
                     f"CSV format does not meet the requirements, the number of columns does not match the header's requirements at line {row_number}.")
