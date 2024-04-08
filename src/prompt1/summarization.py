@@ -17,6 +17,8 @@ def csv_content_to_string(filepath):
         num_columns = len(column_titles)
 
         for row_number, row in enumerate(reader, start=2):  # 从文件的第二行开始读取，计数从2开始
+            if len(formatted_reviews) >= 80:  # 只处理前80条评论
+                break  # 超过80条时停止添加
             if len(row) != num_columns:
                 raise ValueError(
                     f"CSV format does not meet the requirements, the number of columns does not match the header's requirements at line {row_number}.")
