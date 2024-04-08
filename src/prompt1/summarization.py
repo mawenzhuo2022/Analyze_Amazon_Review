@@ -39,6 +39,7 @@ if __name__ == "__main__":
 
     # testcase ########################################
     reviews = csv_content_to_string(filepath)
+    print(f"The length of the reviews list is: {len(reviews)}")
     for review in reviews[:5]:  # 打印前5条评论作为示例
         print(review)
         print("-----")
