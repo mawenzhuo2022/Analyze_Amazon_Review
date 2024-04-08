@@ -70,6 +70,6 @@ if __name__ == "__main__":
             ]
         )
        # result = process_result(response.choices[0].message.content)
-        print(f"Response: {process_results(response.choices[0].message.content)}")
+        print(f"Response:\n {process_results(response.choices[0].message.content)}")
     except Exception as e:
         print(f"Error: {e}")
