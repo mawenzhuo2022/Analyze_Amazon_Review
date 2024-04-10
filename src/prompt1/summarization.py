@@ -86,10 +86,15 @@ if __name__ == "__main__":
             messages=[
                 {"role": "system", "content": system_prompt_content},
                 {"role": "user", "content": reviews_string}
-            ]
-        )
+            ],
+                temperature=0.3
+
+            )
+
+
         # Process and print the structured response to extract product name and aspect titles.
         print(f"Response:\n {process_results(response.choices[0].message.content)}")
+        print((response.choices[0].message.content))
     except Exception as e:
         # Print any errors encountered during the API request or processing.
         print(f"Error: {e}")
