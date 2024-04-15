@@ -43,7 +43,7 @@ def csv_content_to_string(filepath):
         column_titles = next(reader)  # 从CSV的第一行提取列标题
 
         for row in reader:  # 遍历CSV文件中的每一行
-            if len(formatted_reviews) >= 80:  # 如果已达到80条评论则停止
+            if len(formatted_reviews) >= 2000:  # 如果已达到80条评论则停止
                 break
             # 将产品名称、评分和评论文本提取出来并格式化
             product_name = row[0]
@@ -88,6 +88,23 @@ def get_sentiment(text):
     blob = TextBlob(text)  # Create a TextBlob object
     return blob.sentiment.polarity  # Return the polarity of the text
 
+
+def save_data_to_csv(data, filename, index=False):
+    """
+    Save a DataFrame or Series to a CSV file.
+
+    Parameters:
+    - data (DataFrame or Series): The Pandas DataFrame or Series to save.
+    - filename (str): The filename for the CSV file.
+    - index (bool): Whether to write row names (index). Default is False.
+    """
+    # Convert Series to DataFrame if necessary
+    if isinstance(data, pd.Series):
+        data = data.to_frame()
+
+    # Save to CSV
+    data.to_csv(filename, index=index)
+
 # Main function
 # 主函数
 def main():
@@ -102,11 +119,16 @@ def main():
                                                             features_df['sentiment'], test_size=0.2, random_state=42)
 
         print("Train and test data prepared.")  # Print message indicating data preparation completion
-        # print("训练数据集 X_train 的前几行：")  # Print message indicating display of first few rows of training data
-        # print(X_train.head())  # Display first few rows of X_train
-        #
-        # print("\n训练数据集 y_train 的前几行：")  # Print message indicating display of first few rows of training labels
-        # print(y_train.head())  # Display first few rows of y_train
+        print("训练数据集 X_train 的前几行：")  # Print message indicating display of first few rows of training data
+        print(X_train.head())  # Display first few rows of X_train
+
+        print("\n训练数据集 y_train 的前几行：")  # Print message indicating display of first few rows of training labels
+        print(y_train.head())  # Display first few rows of y_train
+
+        save_data_to_csv(X_train, '../../dat/analyze/cleaned_data/X_train.csv')
+        save_data_to_csv(X_test, '../../dat/analyze/cleaned_data/X_test.csv')
+        save_data_to_csv(y_train, '../../dat/analyze/cleaned_data/Y_train.csv')
+        save_data_to_csv(y_test, '../../dat/analyze/cleaned_data/Y_test.csv')
 
     except Exception as e:
         print(f"An error occurred: {e}")  # Print error message if an exception occurs

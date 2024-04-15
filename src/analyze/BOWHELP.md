@@ -27,8 +27,8 @@ pip install scikit-learn
 
 ### 步骤 2: 聚类分析
 ### Step 2: Cluster Analysis
-- **选择聚类算法**：使用如 K-means 或层次聚类等算法对 BoW 向量进行聚类。
-  - **Choose Clustering Algorithm**: Use algorithms such as K-means or hierarchical clustering to cluster BoW vectors.
+- **选择聚类算法**：使用 K-means 算法对 BoW 向量进行聚类。
+  - **Choose Clustering Algorithm**: Use K-means algorithm to cluster BoW vectors.
 - **确定聚类数**：通过肘部方法等技术确定聚类的最佳数量。
   - **Determine Number of Clusters**: Determine the optimal number of clusters using techniques like the Elbow Method.
 - **执行聚类**：将评论进行聚类，每个聚类代表相似的评论集合。
