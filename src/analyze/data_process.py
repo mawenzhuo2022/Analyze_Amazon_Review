@@ -117,6 +117,12 @@ def main():
                                                             features_df['sentiment'], test_size=0.2, random_state=42)
 
         print("Train and test data prepared.")
+        print("训练数据集 X_train 的前几行：")
+        print(X_train.head())
+
+        print("\n训练数据集 y_train 的前几行：")
+        print(y_train.head())
+
 
     except Exception as e:
         print(f"An error occurred: {e}")
