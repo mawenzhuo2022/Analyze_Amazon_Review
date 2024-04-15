@@ -4,6 +4,14 @@
 本项目旨在使用 Bag-of-Words (BoW) 模型和线性回归方法对产品评论进行分析，以预测和解释用户的评分。此方法通过聚类分析和回归分析来量化不同方面的评论内容对产品评分的影响。
 This project aims to analyze product reviews using the Bag-of-Words (BoW) model and linear regression methods to predict and explain user ratings. This method quantifies the impact of different aspects of review content on product ratings through cluster analysis and regression analysis.
 
+# **Important:** INSTALL INSTRUCTIONS
+
+To install the required packages, run the following commands:
+````
+pip install textblob
+pip install nltk
+pip install scikit-learn
+````
 ## 步骤概述
 ## Step Overview
 
