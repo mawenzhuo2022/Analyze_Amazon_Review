@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author  : Wenzhuo Ma
 # @Time    : 2024/4/17 11:21
-# @Function:
+# @Function: Train a linear regression model and evaluate its performance
 
 import pandas as pd
 from sklearn.metrics import mean_squared_error, mean_absolute_error, root_mean_squared_error

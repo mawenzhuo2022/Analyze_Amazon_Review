@@ -11,57 +11,57 @@ def load_data():
     """Load training and testing data from CSV files.
     加载训练和测试数据集。
     """
-    X_train = pd.read_csv('../../dat/analyze/cleaned_data/X_train.csv')
-    Y_train = pd.read_csv('../../dat/analyze/cleaned_data/Y_train.csv')
-    X_test = pd.read_csv('../../dat/analyze/cleaned_data/X_test.csv')
-    Y_test = pd.read_csv('../../dat/analyze/cleaned_data/Y_test.csv')
+    X_train = pd.read_csv('../../dat/analyze/cleaned_data/X_train.csv')  # Load training data from CSV files
+    Y_train = pd.read_csv('../../dat/analyze/cleaned_data/Y_train.csv')  # Load labels of training data from CSV files
+    X_test = pd.read_csv('../../dat/analyze/cleaned_data/X_test.csv')    # Load testing data from CSV files
+    Y_test = pd.read_csv('../../dat/analyze/cleaned_data/Y_test.csv')    # Load labels of testing data from CSV files
     return X_train, Y_train, X_test, Y_test
 
 def plot_elbow_method(data):
     """Generate elbow plot to determine optimal number of clusters for k-means.
     生成肘部法则图，用以确定k-means的最佳聚类数量。
     """
-    inertias = []
-    k_range = range(1, 11)  # Testing different k values from 1 to 10. 测试从1到10的不同k值。
+    inertias = []                        # List to store inertia values for each number of clusters
+    k_range = range(1, 11)               # Testing different number of clusters from 1 to 10
     for k in k_range:
-        kmeans = KMeans(n_clusters=k, random_state=42)
-        kmeans.fit(data)
-        inertias.append(kmeans.inertia_)
+        kmeans = KMeans(n_clusters=k, random_state=42)  # Create KMeans model with given number of clusters
+        kmeans.fit(data)                 # Fit the data
+        inertias.append(kmeans.inertia_)  # Append the inertia value to the list
 
-    plt.figure(figsize=(8, 4))
-    plt.plot(k_range, inertias, marker='o')
-    plt.title('Elbow Method For Optimal k')
-    plt.xlabel('Number of clusters')
-    plt.ylabel('Inertia')
-    plt.xticks(k_range)
-    plt.grid(True)
-    plt.show()
+    plt.figure(figsize=(8, 4))           # Create the plot window
+    plt.plot(k_range, inertias, marker='o')  # Plot the elbow method
+    plt.title('Elbow Method For Optimal k')  # Set the title
+    plt.xlabel('Number of clusters')     # Set the X-axis label
+    plt.ylabel('Inertia')                 # Set the Y-axis label
+    plt.xticks(k_range)                   # Set the X-axis ticks
+    plt.grid(True)                        # Show grid lines
+    plt.show()                            # Show the plot
 
 def fit_model(data, k=3):
     """Fit the KMeans model using a pre-determined optimal k value.
     使用预先确定的最优k值拟合KMeans模型。
     """
-    kmeans = KMeans(n_clusters=k, random_state=42)
-    clusters = kmeans.fit_predict(data)
+    kmeans = KMeans(n_clusters=k, random_state=42)  # Create KMeans model with pre-determined optimal number of clusters
+    clusters = kmeans.fit_predict(data)            # Cluster the data
     return clusters, kmeans
 
 def save_cluster_data(data, clusters, filepath):
     """Save the clustered data to a CSV file.
     将聚类数据保存到 CSV 文件中。
     """
-    # 将聚类标签添加到数据框架中
+    # Add cluster labels to the dataframe
     data['Cluster'] = clusters
-    data.to_csv(filepath, index=False)
-    print(f"Cluster data saved to {filepath}")
+    data.to_csv(filepath, index=False)  # Save the data to a CSV file without saving the index
+    print(f"Cluster data saved to {filepath}")  # Print the path where the file is saved
 
 def main():
     """Main function to run the clustering analysis.
     主函数运行聚类分析。
     """
-    X_train, Y_train, X_test, Y_test = load_data()
-    plot_elbow_method(X_train)
-    clusters, kmeans = fit_model(X_train)
-    save_cluster_data(X_train, clusters, "../../dat/analyze/cluster/cluster.csv")  # 保存聚类结果
+    X_train, Y_train, X_test, Y_test = load_data()  # Load the data
+    plot_elbow_method(X_train)                       # Plot the elbow method to determine the optimal number of clusters
+    clusters, kmeans = fit_model(X_train)            # Cluster the training data
+    save_cluster_data(X_train, clusters, "../../dat/analyze/cluster/cluster.csv")  # Save the clustered result
 
 if __name__ == "__main__":
     main()
