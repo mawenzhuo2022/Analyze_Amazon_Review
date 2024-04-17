@@ -40,19 +40,26 @@ pip install scikit-learn
 - **执行聚类**：将评论进行聚类，每个聚类代表相似的评论集合。
   - **Perform Clustering**: Cluster the reviews, with each cluster representing a similar set of reviews.
 
-### 步骤 3: 特征工程
-### Step 3: Feature Engineering
-- **识别关键词**：分析每个聚类中的常见词和关键词，识别可能影响评分的因素。
-  - **Identify Keywords**: Analyze common and key words in each cluster to identify factors that may affect the rating.
-- **构建特征向量**：基于识别的关键词构建特征向量，每个向量代表一个评论。
-  - **Build Feature Vectors**: Construct feature vectors based on identified keywords, with each vector representing a review.
+### 步骤 3: 使用 GPT API 进行关键词识别
+### Step 3: Keyword Identification Using GPT API
+- **准备聚类描述**：为每个聚类生成文本描述，选择最具代表性的特征。这可以基于统计量，如聚类内特征的平均值或中位数。
+  - **Prepare Cluster Descriptions**: Generate a text description for each cluster by selecting the most representative features. This can be based on statistical measures such as the mean or median values of the features within the cluster.
+- **构建 API 请求**：使用 GPT-3.5 或更新版本构建请求，包括聚类描述。请求应指定需要识别关键词或关键短语，系统提示指导模型分析内容，例如“从以下聚类描述中识别关键字和短语”。
+  - **Build API Requests**: Configure a request using GPT-3.5 or later, including the cluster description. The request should specify the need to identify keywords or key phrases, with a system prompt guiding the model on what to analyze, e.g., "Identify key words and phrases from the following cluster description."
+- **发送请求和处理响应**：将准备好的文本作为 API 请求的一部分发送。调整参数，如`温度`以控制创造性或`最大标记`以限制响应长度。
+  - **Send Request and Process Responses**: Send the prepared text as part of the API request. Adjust parameters like `temperature` to control creativity or `max_tokens` to limit response length.
+- **分析和应用关键词**：评估这些关键词在聚类背景中的重要性和相关性。探索这些关键词与用户评分、客户满意度或其他业务指标的相关性。
+  - **Analyze and Apply Keywords**: Evaluate the importance and relevance of these keywords within the cluster context. Explore how these keywords correlate with user ratings, customer satisfaction, or other business metrics.
 
-### 步骤 4: 线性回归模型
-### Step 4: Linear Regression Model
-- **模型训练**：使用线性回归模型，以特征向量为输入，用户评分为响应变量进行训练。
-  - **Model Training**: Train a linear regression model using feature vectors as inputs and user ratings as the response variable.
-- **模型评估**：通过交叉验证等方法评估模型的性能和准确性。
-  - **Model Evaluation**: Evaluate the model's performance and accuracy through methods like cross-validation.
+### 步骤 4: 训练和评估模型
+### Step 4: Training and Evaluating the Model
+
+- **模型训练**：准备数据，确保所有输入特征包括新识别的关键词已准备好进行建模。检查数据完整性，并适当处理任何缺失或异常值。使用线性回归模型，以增强的特征向量作为输入，以用户评分作为响应变量进行模型训练。
+  - **Model Training**: Prepare the data ensuring all input features, including the newly identified keywords, are ready for modeling. Check for data integrity and handle any missing or outlier values appropriately. Train the model using a linear regression model, with enriched feature vectors as inputs and user ratings as the response variable.
+
+- **模型评估**：使用交叉验证等技术评估模型的性能和泛化能力。这有助于评估预测模型的准确性和可靠性。利用指标如均方根误差（RMSE）和平均绝对误差（MAE）等来量化模型在评估阶段的性能。
+  - **Model Evaluation**: Evaluate the model's performance and generalization ability using techniques like cross-validation. This helps in assessing the accuracy and reliability of the predictive model. Utilize metrics such as Root Mean Square Error (RMSE) and Mean Absolute Error (MAE) to quantify the model's performance during the evaluation phase.
+
 
 ### 步骤 5: 量化贡献
 ### Step 5: Quantifying Contributions

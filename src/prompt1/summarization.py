@@ -82,24 +82,24 @@ if __name__ == "__main__":
     # Load environment variables, including the OpenAI API key.
     load_dotenv()
     # Initialize the OpenAI client with the API key.
-    # client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-    #
-    # try:
-    #     # Make a request to the OpenAI chat API with the formatted reviews and system prompt.
-    #     response = client.chat.completions.create(
-    #         model="gpt-3.5-turbo",
-    #         messages=[
-    #             {"role": "system", "content": system_prompt_content},
-    #             {"role": "user", "content": reviews_string}
-    #         ],
-    #             temperature=0.3
-    #
-    #         )
-    #
-    #
-    #     # Process and print the structured response to extract product name and aspect titles.
-    #     print(f"Response:\n {process_results(response.choices[0].message.content)}")
-    #     #print((response.choices[0].message.content))
-    # except Exception as e:
-    #     # Print any errors encountered during the API request or processing.
-    #     print(f"Error: {e}")
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+    try:
+        # Make a request to the OpenAI chat API with the formatted reviews and system prompt.
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": system_prompt_content},
+                {"role": "user", "content": reviews_string}
+            ],
+                temperature=0.3
+
+            )
+
+
+        # Process and print the structured response to extract product name and aspect titles.
+        print(f"Response:\n {process_results(response.choices[0].message.content)}")
+        #print((response.choices[0].message.content))
+    except Exception as e:
+        # Print any errors encountered during the API request or processing.
+        print(f"Error: {e}")

@@ -45,16 +45,14 @@ def fit_model(data, k=3):
     clusters = kmeans.fit_predict(data)
     return clusters, kmeans
 
-def analyze_clusters(data, clusters):
-    """Analyze and print cluster data.
-    分析并打印聚类数据。
+def save_cluster_data(data, clusters, filepath):
+    """Save the clustered data to a CSV file.
+    将聚类数据保存到 CSV 文件中。
     """
-    cluster_data = pd.concat([data, pd.DataFrame(clusters, columns=['Cluster'])], axis=1)
-    for cluster in sorted(cluster_data['Cluster'].unique()):
-        print(f"\nCluster {cluster} Top terms:")
-        current_cluster_data = cluster_data[cluster_data['Cluster'] == cluster]
-        word_freq = current_cluster_data.drop('Cluster', axis=1).mean().sort_values(ascending=False)
-        print(word_freq.head())
+    # 将聚类标签添加到数据框架中
+    data['Cluster'] = clusters
+    data.to_csv(filepath, index=False)
+    print(f"Cluster data saved to {filepath}")
 
 def main():
     """Main function to run the clustering analysis.
@@ -63,7 +61,7 @@ def main():
     X_train, Y_train, X_test, Y_test = load_data()
     plot_elbow_method(X_train)
     clusters, kmeans = fit_model(X_train)
-    analyze_clusters(X_train, clusters)
+    save_cluster_data(X_train, clusters, "../../dat/analyze/cluster/cluster.csv")  # 保存聚类结果
 
 if __name__ == "__main__":
     main()

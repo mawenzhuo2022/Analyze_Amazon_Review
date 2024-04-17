@@ -43,7 +43,7 @@ def csv_content_to_string(filepath):
         column_titles = next(reader)  # 从CSV的第一行提取列标题
 
         for row in reader:  # 遍历CSV文件中的每一行
-            if len(formatted_reviews) >= 2000:  # 如果已达到80条评论则停止
+            if len(formatted_reviews) >= 50:  # 如果已达到80条评论则停止
                 break
             # 将产品名称、评分和评论文本提取出来并格式化
             product_name = row[0]
@@ -125,10 +125,10 @@ def main():
         print("\n训练数据集 y_train 的前几行：")  # Print message indicating display of first few rows of training labels
         print(y_train.head())  # Display first few rows of y_train
 
-        save_data_to_csv(X_train, '../../dat/analyze/cleaned_data/X_train.csv')
-        save_data_to_csv(X_test, '../../dat/analyze/cleaned_data/X_test.csv')
-        save_data_to_csv(y_train, '../../dat/analyze/cleaned_data/Y_train.csv')
-        save_data_to_csv(y_test, '../../dat/analyze/cleaned_data/Y_test.csv')
+        # save_data_to_csv(X_train, '../../dat/analyze/cleaned_data/X_train.csv')
+        # save_data_to_csv(X_test, '../../dat/analyze/cleaned_data/X_test.csv')
+        # save_data_to_csv(y_train, '../../dat/analyze/cleaned_data/Y_train.csv')
+        # save_data_to_csv(y_test, '../../dat/analyze/cleaned_data/Y_test.csv')
 
     except Exception as e:
         print(f"An error occurred: {e}")  # Print error message if an exception occurs
