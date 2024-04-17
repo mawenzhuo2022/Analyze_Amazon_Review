@@ -8,24 +8,19 @@ import pandas as pd
 from openai import OpenAI
 from dotenv import load_dotenv
 import numpy as np
-
 def load_clustered_data(filepath):
-    # 加载数据
-    data = pd.read_csv(filepath)
-    return data
+    return pd.read_csv(filepath)
 
-def create_cluster_summaries(data, text_column):
-    # 为每个聚类创建文本描述
+def create_cluster_summaries(data):
     cluster_groups = data.groupby('Cluster')
     summaries = {}
     for cluster, group in cluster_groups:
-        # 假设每个聚类的描述是基于一个特定的文本列生成的
-        top_features = group.mean().sort_values(ascending=False).head(5).index.tolist()
+        top_features = group.drop('Cluster', axis=1).mean().sort_values(ascending=False).head(5).index.tolist()
         summaries[cluster] = " ".join(top_features)
     return summaries
 
+
 def identify_keywords(summaries, client):
-    # 向 GPT API 发送聚类描述，请求提取关键词
     keywords = {}
     for cluster, text in summaries.items():
         response = client.chat.completions.create(
@@ -37,11 +32,23 @@ def identify_keywords(summaries, client):
             max_tokens=50,
             temperature=0.5
         )
+        # Extract the keyword text from the response
         keywords_text = response.choices[0].message.content
-        cleaned_keywords = keywords_text.replace("Key words and phrases:", "").replace("-", "").replace(",", "").split()
-        cleaned_keywords = [kw.strip(' ,.-') for kw in cleaned_keywords if kw.strip(' ,.-')]
+
+        # Normalize the text by converting it to lowercase to handle case insensitivity
+        keywords_text = keywords_text.lower().replace("key words and phrases:", "").strip()
+
+        # Replace newlines with commas and split the string into a list
+        split_keywords = keywords_text.replace("\n", ",").split(",")
+
+        # Clean each keyword to remove unwanted characters and whitespace
+        cleaned_keywords = [kw.strip(' ,.-') for kw in split_keywords if kw.strip(' ,.-')]
+
+        # Store the cleaned keywords in the dictionary
         keywords[cluster] = cleaned_keywords
+
     return keywords
+
 
 def main():
     load_dotenv()
@@ -49,9 +56,14 @@ def main():
 
     filepath = "../../dat/analyze/cluster/cluster.csv"
     data = load_clustered_data(filepath)
-    # 假设实际的文本列名是 'review'
-    cluster_summaries = create_cluster_summaries(data, 'review')
+    cluster_summaries = create_cluster_summaries(data)
     cluster_keywords = identify_keywords(cluster_summaries, client)
+
+    # Create a DataFrame from the dictionary of keywords
+    keywords_df = pd.DataFrame(list(cluster_keywords.items()), columns=['Cluster', 'Keywords'])
+
+    # Save the DataFrame to a CSV file
+    keywords_df.to_csv('../../dat/analyze/feature_keywords/feature_keywords.csv', index=False)
 
     for cluster, ks in cluster_keywords.items():
         print(f"Cluster {cluster} Keywords: {ks}")
