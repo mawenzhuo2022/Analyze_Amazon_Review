@@ -43,7 +43,7 @@ def csv_content_to_string(filepath):
         column_titles = next(reader)  # 从CSV的第一行提取列标题
 
         for row in reader:  # 遍历CSV文件中的每一行
-            if len(formatted_reviews) >= 50:  # 如果已达到80条评论则停止
+            if len(formatted_reviews) >= 2000:  # 如果已达到80条评论则停止
                 break
             # 将产品名称、评分和评论文本提取出来并格式化
             product_name = row[0]
