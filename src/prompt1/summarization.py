@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# @Author  : Wenzhuo Ma
+# @Time    : 2024/4/10 23:30
+
 import os
 import csv
 from openai import OpenAI
