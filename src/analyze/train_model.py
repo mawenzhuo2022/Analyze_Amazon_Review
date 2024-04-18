@@ -5,7 +5,7 @@
 
 import pandas as pd
 from sklearn.metrics import mean_squared_error, mean_absolute_error, root_mean_squared_error
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
 from sklearn.preprocessing import StandardScaler  # 导入 StandardScaler 用于特征缩放
 
@@ -41,21 +41,43 @@ def train_and_evaluate(X_train, X_test, y_train, y_test):
 
     # 训练线性回归模型并评估其性能
     # Train a linear regression model and evaluate its performance
-    param_grid = {
-        'fit_intercept': [True, False],
-        'n_jobs': [-1, 1]
+    models = {
+        'Ridge': Ridge(),
+        'Lasso': Lasso(max_iter=10000),
+        'ElasticNet': ElasticNet(max_iter=10000)
     }
-    model = LinearRegression()
-    grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='neg_mean_squared_error',
-                               verbose=1)
-    grid_search.fit(pd.concat([X_train, X_test]), pd.concat([y_train, y_test]))
-    print("Best parameters:", grid_search.best_params_)
-    print("Best score (negative MSE):", grid_search.best_score_)
+    param_grid = {
+        'Ridge': {'alpha': [0.1, 1, 10, 100, 1000]},
+        'Lasso': {'alpha': [0.01, 0.1, 1, 10, 100]},
+        'ElasticNet': {'alpha': [0.01, 0.1, 1, 10, 100], 'l1_ratio': [0.2, 0.5, 0.8]}
+    }
 
-    best_model = grid_search.best_estimator_
-    y_pred = best_model.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    print(f"Test MSE: {mse}")
+    for name, model in models.items():
+        print(f"\nTuning {name} model")
+        grid_search = GridSearchCV(estimator=model, param_grid=param_grid[name], cv=5, scoring='neg_mean_squared_error',
+                                   verbose=1)
+        grid_search.fit(pd.concat([X_train, X_test]), pd.concat([y_train, y_test]))
+
+        print(f"Best parameters for {name}: ", grid_search.best_params_)
+        print(f"Best score for {name} (negative MSE): ", grid_search.best_score_)
+
+        best_model = grid_search.best_estimator_
+        y_pred = best_model.predict(X_test)
+        mse = mean_squared_error(y_test, y_pred)
+        print(f"Test MSE for {name}: {mse}")
+
+    #model = Ridge()
+    #grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='neg_mean_squared_error',
+    #                           verbose=1)
+
+    #grid_search.fit(pd.concat([X_train, X_test]), pd.concat([y_train, y_test]))
+    #print("Best parameters:", grid_search.best_params_)
+    #print("Best score (negative MSE):", grid_search.best_score_)
+
+    #best_model = grid_search.best_estimator_
+    #y_pred = best_model.predict(X_test)
+    #mse = mean_squared_error(y_test, y_pred)
+    #print(f"Test MSE: {mse}")
     #model.fit(X_train, y_train)
     #y_pred = model.predict(X_test)
 
