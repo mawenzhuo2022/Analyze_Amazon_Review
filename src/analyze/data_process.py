@@ -108,7 +108,7 @@ def save_data_to_csv(data, filename, index=False):
 # Main function
 # 主函数
 def main():
-    filepath = "../../dat/analyze/dataset_phone.csv"  # Path to the CSV file
+    filepath = "../../dat/analyze/dataset/iphone7.csv"  # Path to the CSV file
     try:
         reviews = csv_content_to_string(filepath)  # 从CSV获取内容并转换为字符串列表
         cleaned_reviews = [clean_text(review) for review in reviews]  # 清洗每条评论
@@ -125,10 +125,11 @@ def main():
         print("\n训练数据集 y_train 的前几行：")  # Print message indicating display of first few rows of training labels
         print(y_train.head())  # Display first few rows of y_train
 
-        # save_data_to_csv(X_train, '../../dat/analyze/cleaned_data/X_train.csv')
-        # save_data_to_csv(X_test, '../../dat/analyze/cleaned_data/X_test.csv')
-        # save_data_to_csv(y_train, '../../dat/analyze/cleaned_data/Y_train.csv')
-        # save_data_to_csv(y_test, '../../dat/analyze/cleaned_data/Y_test.csv')
+        save_data_to_csv(X_train, '../../dat/analyze/cleaned_data/X_train.csv')
+        save_data_to_csv(X_test, '../../dat/analyze/cleaned_data/X_test.csv')
+        save_data_to_csv(y_train, '../../dat/analyze/cleaned_data/Y_train.csv')
+        save_data_to_csv(y_test, '../../dat/analyze/cleaned_data/Y_test.csv')
+
 
     except Exception as e:
         print(f"An error occurred: {e}")  # Print error message if an exception occurs
