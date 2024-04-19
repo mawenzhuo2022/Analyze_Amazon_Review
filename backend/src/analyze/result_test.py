@@ -2,7 +2,7 @@ import re
 
 def main():
     # 使用正则表达式从第一行提取被三个方括号包围的产品名称
-    data = """
+    result = """
     [[[iphone7 (refurbished)]]]
 
     1. "great" (Coefficient: 0.373546):
@@ -31,35 +31,37 @@ def main():
     """
 
 
-    product_name_match = re.search(r'\[\[\[(.*?)\]\]\]', data)
+    product_name_match = re.search(r'\[\[\[(.*?)\]\]\]', result)
     if product_name_match:
         product_name = product_name_match.group(1)
         print("Product Name:", product_name)  # 打印产品名称
+    lines = result.split('\n')
+    # Define the maximum number for feature identification based on the total number of lines
+    max_feature_number = len(lines)
+    i = 1  # Start from the second line (index 1, since indexing starts at 0)
 
-    lines = data.split('\n')
-    i = 0
     while i < len(lines):
         line = lines[i].strip()
-        if line.startswith('1.') or line.startswith('2.') or line.startswith('3.') or line.startswith(
-                '4.') or line.startswith('5.') or line.startswith('6.') or line.startswith('7.') or line.startswith(
-            '8.'):
-            feature = line.split('"')[1]
+        # Check if the line starts with any number followed by a period, up to the max number of lines
+        if any(line.startswith(f"{n}.") for n in range(1, max_feature_number + 1)):
+            feature = line.split('"')[1]  # Extract the feature name
             i += 1  # Move to the description line
             description = ""
-            while i < len(lines) and not lines[i].strip().startswith('1.') and not lines[i].strip().startswith(
-                    '2.') and not lines[i].strip().startswith('3.') and not lines[i].strip().startswith('4.') and not \
-                    lines[i].strip().startswith('5.') and not lines[i].strip().startswith('6.') and not lines[
-                i].strip().startswith('7.') and not lines[i].strip().startswith('8.'):
+            # Accumulate description until a new feature number is encountered
+            while i < len(lines) and not any(
+                    lines[i].strip().startswith(f"{n}.") for n in range(1, max_feature_number + 1)):
                 description += lines[i].strip() + " "
                 i += 1
             parts = description.strip().rsplit('.', -1)  # Split all sentences on period
-            if len(parts) >= 2:  # Ensure there are at least two parts
-                second_last_content = parts[-2].strip() + '.'  # Get the second-to-last part
+            # Get the second-to-last part of the description, if available
+            if len(parts) >= 2:
+                second_last_content = parts[-2].strip() + '.'
             else:
-                second_last_content = description.strip()  # If less than two sentences, take the whole description
-            print(f"{feature}: {second_last_content}")  # Print each feature's second-to-last sentence
+                second_last_content = description.strip()
+            # Print each feature's second-to-last sentence
+            print(f"{feature}: {second_last_content}")
         else:
-            i += 1
+            i += 1  # Move to the next line if current line is not the start of a feature
 
 
 # 确保当直接运行此脚本时调用 main 函数
