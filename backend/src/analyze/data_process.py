@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 from textblob import TextBlob
 from nltk.sentiment import SentimentIntensityAnalyzer
 from nltk.corpus import wordnet
+import os
 
 # Download all resources recommended by NLTK, this may take some time
 nltk.download('popular')
@@ -107,8 +108,9 @@ def save_data_to_csv(data, filename, index=False):
 
 # Main function
 # 主函数
-def main():
-    filepath = "../../dat/analyze/dataset/iphone7.csv"  # Path to the CSV file
+def main(data):
+    base_path = os.path.abspath("../../dat/analyze/dataset")
+    filepath = os.path.join(base_path, f"{data}.csv")
     try:
         reviews = csv_content_to_string(filepath)  # 从CSV获取内容并转换为字符串列表
         cleaned_reviews = [clean_text(review) for review in reviews]  # 清洗每条评论

@@ -43,7 +43,7 @@ def interpret_results_with_gpt(prompt, product, client):
                 {"role": "system", "content": f"Describe the impact of each listed feature on customer satisfaction and product ratings, using a clear, numbered format. Avoid any mention of numerical data or coefficients. Focus solely on how each feature, when present in a product, typically influences customer perceptions and reviews. Ensure each feature is discussed within the context of the specific product [[[{product}]]], mention the product name at top of feedback between [[[]]], highlighting the practical implications of each feature on user experience."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.3  # You can adjust the temperature if you need more creative or conservative responses
+            temperature=0.2  # You can adjust the temperature if you need more creative or conservative responses
         )
         # Extracting the message content from the response
         # Assuming the response structure is correctly returned in the expected format
@@ -105,8 +105,8 @@ def result_process(result):
     return final_result
 
 
-def main():
-    product_name = 'iphone7 (refurbrished)'
+def main(data):
+    product_name = f'{data}'
 
     # Path to the regression results CSV file
     file_path = '../../dat/analyze/regression_results/regression_results.csv'
