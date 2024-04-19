@@ -39,10 +39,10 @@ def interpret_results_with_gpt(prompt, client):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",  # Adjust the model identifier as necessary
             messages=[
-                {"role": "system", "content": "Interpret the significance of the following features based on their coefficients for a product rating model."},
+                {"role": "system", "content": "Interpret the significance of the following features based on their coefficients for a product rating model. This is the dataset for {{{iphone7 (refurbrished)}}}. Place the product name between {{{}}} in introduction."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.5  # You can adjust the temperature if you need more creative or conservative responses
+            temperature=0.2  # You can adjust the temperature if you need more creative or conservative responses
         )
         # Extracting the message content from the response
         # Assuming the response structure is correctly returned in the expected format
