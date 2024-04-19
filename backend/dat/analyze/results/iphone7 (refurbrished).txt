@@ -1,0 +1,9 @@
+Product Name: iphone7 (refurbrished)
+great: Customers tend to highly appreciate products that are described as "great," indicating that this feature contributes positively to their overall experience with the product.
+good: Customers generally perceive products described as "good" favorably, leading to higher ratings and positive reviews.
+new: Customers often prefer products that are described as "new" as it implies freshness and quality, contributing to a better overall user experience.
+screen: A good screen quality is essential for user interaction and enjoyment, which can result in slightly higher product ratings.
+use: Customers appreciate products that are easy to use and navigate, which can contribute to a slightly better user experience and, consequently, higher ratings.
+work: Customers expect products to function as intended, and mentioning that the product "works" can contribute to a basic level of satisfaction, albeit with a relatively small effect on overall ratings.
+battery: Issues related to battery performance can significantly impact user experience, leading to slightly lower product ratings when highlighted in the description.
+charge: While charging capabilities are essential, customers may not heavily weigh this feature in their overall assessment of the product, resulting in minimal effects on product ratings.
