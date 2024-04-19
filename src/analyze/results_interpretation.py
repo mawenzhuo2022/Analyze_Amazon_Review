@@ -39,10 +39,10 @@ def interpret_results_with_gpt(prompt, product, client):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",  # Adjust the model identifier as necessary
             messages=[
-                {"role": "system", "content": f"Interpret the significance of the following features based on their coefficients for a product rating model. This is the dataset for [[[{product}]]]. Place the product name between [[[]]] in introduction."},
+                {"role": "system", "content": f"Describe the impact of each listed feature on customer satisfaction and product ratings, using a clear, numbered format. Avoid any mention of numerical data or coefficients. Focus solely on how each feature, when present in a product, typically influences customer perceptions and reviews. Ensure each feature is discussed within the context of the specific product [[[{product}]]], mention the product name at top of feedback between [[[]]], highlighting the practical implications of each feature on user experience."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.2  # You can adjust the temperature if you need more creative or conservative responses
+            temperature=0.5  # You can adjust the temperature if you need more creative or conservative responses
         )
         # Extracting the message content from the response
         # Assuming the response structure is correctly returned in the expected format
