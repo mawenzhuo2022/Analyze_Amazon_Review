@@ -33,13 +33,13 @@ def generate_gpt_query(df):
     return prompt
 
 
-def interpret_results_with_gpt(prompt, client):
+def interpret_results_with_gpt(prompt, product, client):
     """Function to call the GPT API and get an interpretation using the chat interface."""
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",  # Adjust the model identifier as necessary
             messages=[
-                {"role": "system", "content": "Interpret the significance of the following features based on their coefficients for a product rating model. This is the dataset for {{{iphone7 (refurbrished)}}}. Place the product name between {{{}}} in introduction."},
+                {"role": "system", "content": f"Interpret the significance of the following features based on their coefficients for a product rating model. This is the dataset for [[[{product}]]]. Place the product name between [[[]]] in introduction."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.2  # You can adjust the temperature if you need more creative or conservative responses
@@ -56,6 +56,8 @@ def interpret_results_with_gpt(prompt, client):
 
 
 def main():
+    product_name = 'iphone7 (refurbrished)'
+
     # Path to the regression results CSV file
     file_path = '../../dat/analyze/regression_results/regression_results.csv'
     load_dotenv()  # Load environment variables from the .env file
@@ -68,7 +70,7 @@ def main():
     prompt = generate_gpt_query(regression_results)
 
     # Get interpretation from GPT
-    interpretation = interpret_results_with_gpt(prompt, client)
+    interpretation = interpret_results_with_gpt(prompt, product_name, client)
 
     print(interpretation)
 
