@@ -54,6 +54,7 @@ def interpret_results_with_gpt(prompt, product, client):
         print(f"Error occurred: {e}")
         return None
 
+
 def extract_last_sentence(description):
     # 提取最后一句话，假设已经正确获得了描述的最后一行
     sentences = description.rsplit('. ', 1)
@@ -63,6 +64,11 @@ def extract_last_sentence(description):
 def result_process(result):
     # 按行分割结果文本以逐行处理
     lines = result.split('\n')
+
+    # 提取产品名称
+    product_name = re.search(r'\[\[\[Product: (.*?)\]\]\]', lines[0]).group(1) if lines[0].startswith(
+        '[[[') else "Unknown Product"
+    product_output = f"Product Name: {product_name}\n"
 
     # 初始化最终输出列表
     features_output = []
@@ -78,8 +84,7 @@ def result_process(result):
             features_output.append(f"{feature}: {last_sentence}\n")
 
     # 将所有特征和最后一句话合并到一个字符串中
-    return ''.join(features_output)
-
+    return product_output + ''.join(features_output)
 
 def main(data):
     product_name = f'{data}'
