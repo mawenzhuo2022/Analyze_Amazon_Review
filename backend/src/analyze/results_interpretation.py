@@ -40,10 +40,10 @@ def interpret_results_with_gpt(prompt, product, client):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",  # Adjust the model identifier as necessary
             messages=[
-                {"role": "system", "content": f"Describe the impact of each listed feature on customer satisfaction and product ratings, using a clear, numbered format. Avoid any mention of numerical data or coefficients. Focus solely on how each feature, when present in a product, typically influences customer perceptions and reviews. Ensure each feature is discussed within the context of the specific product [[[{product}]]], mention the product name at top of feedback between [[[]]], highlighting the practical implications of each feature on user experience."},
+                {"role": "system", "content": f"Describe the impact of each listed feature on customer satisfaction and product ratings, using a clear, numbered format. Avoid any mention of numerical data or coefficients. Focus solely on how each feature, when present in a product, typically influences customer perceptions and reviews. Ensure each feature is discussed within the context of the specific product [[[{product}]]], mention the product name at top of feedback between [[[]]], highlighting the practical implications of each feature on user experience. Sample output:'1. Feature: best, Coefficient: 0.494261\n- Having the 'best' feature in the product tends to significantly boost customer satisfaction and product ratings. Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.'"},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.2  # You can adjust the temperature if you need more creative or conservative responses
+            temperature=0.5  # You can adjust the temperature if you need more creative or conservative responses
         )
         # Extracting the message content from the response
         # Assuming the response structure is correctly returned in the expected format
@@ -54,55 +54,31 @@ def interpret_results_with_gpt(prompt, product, client):
         print(f"Error occurred: {e}")
         return None
 
+def extract_last_sentence(description):
+    # 提取最后一句话，假设已经正确获得了描述的最后一行
+    sentences = description.rsplit('. ', 1)
+    return sentences[-1].strip() + '.' if sentences[-1][-1] != '.' else sentences[-1].strip()
+
+
 def result_process(result):
-    # Extract the product name using regex from the header
-    product_name_match = re.search(r'\[\[\[(.*?)\]\]\]', result)
-    if product_name_match:
-        product_name = product_name_match.group(1)
-        product_name_output = f"Product Name: {product_name}\n"  # Prepare product name for output
-    else:
-        product_name_output = ""
-
+    # 按行分割结果文本以逐行处理
     lines = result.split('\n')
-    max_feature_number = len(lines)
-    i = 1  # Start from the second line (index 1)
-    output = []  # Use a list to accumulate output lines
-    all_features = {}
 
-    while i < len(lines):
-        line = lines[i].strip()
-        if any(line.startswith(f"{n}.") for n in range(1, max_feature_number + 1)):
-            feature = line.split('"')[1]  # Extract the feature name
-            i += 1  # Move to the description line
-            description = ""
-            while i < len(lines) and not any(lines[i].strip().startswith(f"{n}.") for n in range(1, max_feature_number + 1)):
-                description += lines[i].strip() + " "
-                i += 1
-            parts = description.strip().rsplit('.', -1)  # Split all sentences on period
-            all_features[feature] = parts
-        else:
-            i += 1
+    # 初始化最终输出列表
+    features_output = []
 
-    # Extract second-to-last sentence of each feature
-    for feature, sentences in all_features.items():
-        if len(sentences) >= 2:
-            second_last_content = sentences[-2].strip() + '.'
-        else:
-            second_last_content = sentences[0].strip() if sentences else ""
+    # 提取每个特征的名称和最后一句话
+    for i, line in enumerate(lines):
+        if "Feature:" in line and i + 1 < len(lines):  # 确保下一行存在
+            # 特征名是“Feature:”后面的单词
+            feature = line.split('Feature: ')[1].split(',')[0].strip()
+            # 下一行的内容
+            next_line = lines[i + 1]
+            last_sentence = extract_last_sentence(next_line)
+            features_output.append(f"{feature}: {last_sentence}\n")
 
-        # Special handling for "Charge" to append additional info
-        if feature == "Charge":
-            second_last_content += " However, concerns related to \"battery\" and \"charge\" may slightly lower product ratings."
-
-        output.append(f"{feature}: {second_last_content}")
-
-    final_result = product_name_output + "\n".join(output)  # Join all output lines into a single string
-    print(final_result)  # Optionally print the final result
-    return final_result
-
-    final_result = product_name_output + "\n".join(output)  # Join all output lines into a single string
-    print(final_result)  # Optionally print the final result
-    return final_result
+    # 将所有特征和最后一句话合并到一个字符串中
+    return ''.join(features_output)
 
 
 def main(data):
