@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# @Author  : Wenzhuo Ma
+# @Time    : 2024/4/17 11:21
+# @Function: Train a linear regression model and evaluate its performance
+
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import Ridge
@@ -28,8 +33,7 @@ def train_and_evaluate(X_train, X_test, y_train, y_test):
     # Setting up the Ridge regression model
     model = Ridge()
     param_grid = {'alpha': [0.1, 1, 10, 100, 1000]}
-    grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='neg_mean_squared_error',
-                               verbose=1)
+    grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='neg_mean_squared_error', verbose=1)
 
     grid_search.fit(pd.concat([X_train, X_test]), pd.concat([y_train, y_test]))
     best_model = grid_search.best_estimator_
@@ -47,6 +51,9 @@ def train_and_evaluate(X_train, X_test, y_train, y_test):
         }).sort_values(by='Coefficient', key=abs, ascending=False)
         print("Feature ranking for Ridge:")
         print(feature_importance)
+
+        # Save the feature importance to a CSV file
+        feature_importance.to_csv('../../dat/analyze/regression_results/regression_results.csv', index=False)
 
 
 def main():
