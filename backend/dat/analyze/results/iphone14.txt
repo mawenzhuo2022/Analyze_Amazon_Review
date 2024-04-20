@@ -1,0 +1,7 @@
+Product Name: iphone14
+best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+awesome: Customers are likely to view products with this feature as exceptional and impressive, resulting in favorable reviews and high ratings.
+good: Customers perceive products with this feature as satisfactory and decent, which often leads to moderately positive reviews and ratings.
+battery: Customers may associate products with this feature as having subpar battery performance, resulting in lower ratings and less favorable reviews.
+performance: Customers may interpret products with this feature as having mediocre or underwhelming performance, leading to slightly lower ratings and less enthusiastic reviews.
+camera: Customers may perceive products with this feature as having decent camera quality, which can lead to slightly higher ratings and some positive reviews.

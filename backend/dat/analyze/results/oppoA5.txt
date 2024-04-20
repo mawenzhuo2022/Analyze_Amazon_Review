@@ -1,0 +1,9 @@
+Product Name: oppoA5
+good: Customers perceive products with this feature as reliable, high-quality, and meeting their expectations, leading to favorable reviews and higher ratings.
+game: Customers might perceive products with this feature as more specialized or limited in utility, potentially leading to lower ratings from those who do not prioritize gaming capabilities.
+battery life: Products with longer battery life are often perceived as more convenient, reliable, and user-friendly, leading to higher ratings from customers valuing this aspect.
+screen: Customers may interpret products with this feature as having subpar display quality or issues, potentially resulting in lower ratings and negative reviews.
+buy: Customers might associate this feature with purchasing difficulties, confusing processes, or additional costs, leading to lower ratings and dissatisfaction.
+charge: Customers appreciate products with efficient charging capabilities, which can enhance their overall experience and result in slightly higher ratings.
+price: Higher prices may deter some customers or lead to perceptions of poor value for money, potentially resulting in lower ratings and reviews.
+like: Customers may appreciate products with this feature, indicating user-friendly design or personalization options, contributing slightly to higher ratings.

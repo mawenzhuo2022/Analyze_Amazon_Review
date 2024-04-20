@@ -1,0 +1,12 @@
+Product Name: iphone7
+good: Customers perceive products with this feature as high-quality and reliable, leading to favorable reviews and higher ratings.
+battery life: A longer battery life is highly valued by customers, as it enhances the usability and convenience of the product, resulting in positive reviews and higher ratings.
+android: Customers who prefer the Android operating system may view products with this feature more favorably, leading to positive reviews and higher ratings.
+use: Products that are easy to use and navigate tend to receive positive feedback from customers, resulting in higher ratings.
+buy: Customers may perceive products with this feature negatively, potentially leading to lower ratings.
+phone: Customers expect a phone to perform well and meet their communication needs, which can contribute to positive reviews and ratings.
+work: Customers value products that work effectively and efficiently, leading to favorable reviews and higher ratings.
+battery: Issues related to the battery, such as short battery life or poor performance, can lead to lower ratings from customers.
+service: Good customer service can enhance the overall customer experience, resulting in positive reviews and higher ratings.
+time: Products that save time or offer efficient solutions may receive positive feedback from customers, contributing to higher ratings.
+day: Customers may not find this feature particularly beneficial, potentially leading to slightly lower ratings.

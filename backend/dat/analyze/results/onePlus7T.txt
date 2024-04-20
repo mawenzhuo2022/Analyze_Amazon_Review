@@ -1,0 +1,11 @@
+Product Name: onePlus7T
+bad: Customers are likely to perceive products with this feature unfavorably, leading to lower ratings and negative reviews.
+great: Customers perceive products with this feature as excellent and exceptional, resulting in positive reviews and high ratings.
+good: Customers are likely to view products with this feature favorably, leading to satisfactory reviews and ratings.
+amazon: Customers may perceive products associated with this feature as reliable or convenient, potentially resulting in higher ratings and positive reviews.
+return: Products with this feature may be perceived as problematic or prone to issues, leading to lower ratings and negative feedback.
+screen: Customers may find products with this feature less appealing or of lower quality, potentially resulting in slightly lower ratings.
+work: Customers may view products with this feature as unreliable or faulty, leading to reduced satisfaction and lower ratings.
+issue: Customers may perceive products with this feature as problematic or flawed, resulting in slightly lower ratings.
+use: Customers may find products with this feature user-friendly or practical, potentially leading to slightly higher ratings.
+thing: While this feature may not significantly sway customer opinions, it could contribute slightly to more positive reviews and ratings.

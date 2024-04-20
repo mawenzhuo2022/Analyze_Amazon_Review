@@ -1,0 +1,11 @@
+Product Name: redmiNote9
+bad: Customers are likely to perceive products with this feature as subpar or unsatisfactory, leading to lower ratings and negative reviews.
+good: Customers view products with this feature favorably, considering them as satisfactory or above average, resulting in higher ratings and positive reviews.
+amazon: Customers may associate this feature with certain expectations or experiences related to Amazon, which could impact their overall perception of the product.
+nice: Customers tend to perceive products with this feature as pleasant or appealing, contributing to positive reviews and higher ratings.
+high: Customers might interpret products with this feature as expensive or premium, which could influence their overall rating and perception.
+charge: Customers may associate this feature with issues related to charging, impacting their overall perception of the product negatively.
+price: Customers often consider the price of a product when reviewing it, and a favorable price perception can lead to higher ratings.
+issue: Customers appreciate transparency and honesty, so acknowledging and addressing any issues can lead to higher ratings.
+quality: Customers value high-quality products, and the presence of this feature can contribute to positive reviews and ratings.
+time: Customers might associate this feature with issues related to delivery time or product lifespan, impacting their overall perception of the product.

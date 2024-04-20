@@ -1,0 +1,9 @@
+Product Name: samsungM01
+good: Customers perceive products with this feature as meeting their expectations and being of high quality, leading to favorable reviews and higher ratings.
+price: A reasonable price point often leads to increased customer satisfaction and positive reviews, as customers feel they are getting value for their money.
+display: Customers appreciate products with a clear and vibrant display, leading to enhanced user experience and higher ratings.
+return: Customers may perceive products with complicated return processes or policies as less desirable, potentially resulting in lower ratings.
+buy: This feature may indicate ease of purchase or availability, leading to slightly higher ratings from customers.
+battery: Customers often value devices with long-lasting batteries, and a weaker battery performance could result in lower ratings.
+amazon: Customers may prefer products purchased directly from the manufacturer or reputable retailers, potentially impacting their perceptions and ratings.
+core: Customers may associate the core features of a product with its essential functions, and any shortcomings in this aspect could lead to slightly lower ratings.

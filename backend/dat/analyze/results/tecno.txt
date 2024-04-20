@@ -1,0 +1,10 @@
+Product Name: tecno
+good: Customers perceive products with this feature as reliable, high-quality, and meeting their expectations, leading to favorable reviews and higher ratings.
+comet: Customers may perceive this feature as unnecessary, confusing, or even detracting from the overall product experience, resulting in lower ratings and less positive reviews.
+screen: A high-quality screen is often associated with enhanced user experience, clear visuals, and overall product value, leading to higher ratings and positive feedback.
+black: Black color is often associated with elegance, sophistication, and versatility, which can enhance the perceived value of the product and result in higher ratings from customers.
+display: This could be due to issues with the display quality, visibility, or functionality, leading to lower ratings and less positive reviews from customers.
+camera: A good camera is often a key selling point for many consumers, contributing to positive reviews and higher ratings for the product.
+big: Customers may perceive a larger size as offering more functionality, comfort, or value, leading to slightly higher ratings and positive feedback.
+video: Video capabilities can enhance the product's versatility and entertainment value, contributing to slightly higher ratings from customers.
+like: While customers may appreciate this feature, its presence alone is unlikely to significantly influence overall ratings and reviews.
