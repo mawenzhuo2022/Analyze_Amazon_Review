@@ -65,9 +65,8 @@ def result_process(result):
     # 按行分割结果文本以逐行处理
     lines = result.split('\n')
 
-    # 直接从第一行提取产品名称
-    product_name = lines[0].strip('[]').split('Product: ')[1] if 'Product:' in lines[0] else "Unknown Product"
-    product_output = f"Product Name: {product_name}\n"
+    product_name_match = re.search(r'\[\[\[(.*?)\]\]\]', result)
+    product_output = f"Product Name: {product_name_match.group(1)}\n" if product_name_match else ""
 
     # 初始化最终输出列表
     features_output = []
