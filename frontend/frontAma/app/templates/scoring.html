@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>NLP Suite</title>
+	<title>Amazon Review Analyze</title>
 
 </head>
 
@@ -30,8 +30,48 @@
 
 
 		<div style="width: 174px; height: 44px;">
-			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Amazon Review Analyze</h1>
+			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Scoring</h1>
 			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
+
+			<div id="form-container">
+				<div class="text-upload-form">
+					Enter Text:
+					<input type="text" class="text-input" placeholder="Type your text here" size="50">
+					<button onclick="submitText(this)">Submit</button>
+					<p class="score-output"></p>
+				</div>
+			</div>
+			<button onclick="addForm()">+</button>
+			<button onclick="removeForm()">-</button>
+		
+			<script>
+				function submitText(button) {
+					var form = button.parentNode; // Get the parent div of the button
+					var textInput = form.querySelector('.text-input'); // Get the text input within this form
+					var output = form.querySelector('.score-output'); // Get the score output paragraph within this form
+					if (textInput.value) { // Check if text is not empty
+						output.textContent = 'Score'; // Display 'Score'
+					} else {
+						output.textContent = 'Please enter some text before submitting.'; // Prompt to enter text
+					}
+				}
+		
+				function addForm() {
+					var container = document.getElementById('form-container'); // Get the container
+					var originalForm = document.querySelector('.text-upload-form'); // Get the original form to clone
+					var clone = originalForm.cloneNode(true); // Clone the form deeply (including all child elements)
+					clone.querySelector('.text-input').value = ""; // Clear the text input in the cloned form
+					clone.querySelector('.score-output').textContent = ""; // Clear the output in the cloned form
+					container.appendChild(clone); // Append the cloned form to the container
+				}
+		
+				function removeForm() {
+					var container = document.getElementById('form-container');
+					if (container.children.length > 1) { // Ensure there's more than one form to allow removal
+						container.removeChild(container.lastChild); // Remove the last form
+					}
+				}
+			</script>
 		</div>
 		
 		
