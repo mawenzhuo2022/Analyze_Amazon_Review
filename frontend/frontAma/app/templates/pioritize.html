@@ -3,6 +3,7 @@
 
 <head>
 	<title>Amazon Review Analyze</title>
+	
 
 </head>
 
@@ -36,8 +37,9 @@
 		<div style="width: 174px; height: 44px;">
 			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Analyze</h1>
 			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
-			<div>
-				<select id="file-dropdown">
+
+			<div style="margin-bottom: 30px;" >
+				<select id="file-dropdown" style="font-size: 16px; padding: 10px; width: 250px;">
 					<option value="">Select a file</option>
 					<option value="iphone11.txt">iphone11</option>
 					<option value="iphone14.txt">iphone14</option>
@@ -60,11 +62,12 @@
 				</select>
 			
 				<!-- Submit Button -->
-				<button id="submit-btn" onclick="submitChoice()">Submit</button>
-			
-				<pre id="file-content">
+				<button id="submit-btn" onclick="submitChoice()" style="font-size: 16px; padding: 5px 10px; background-color: red; color: white;">Submit</button>
+				<div style="width: 100%; padding: 20px;">
+					<pre id="file-content" style="max-width: 1200px; overflow-wrap: break-word; white-space: pre-wrap; padding: 10px;">
 					<!-- Selected file content will be displayed here -->
 				</pre>
+			</div>
 			
 				<script>
 					function submitChoice() {

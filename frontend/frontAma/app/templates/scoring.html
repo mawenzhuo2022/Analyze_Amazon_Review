@@ -37,11 +37,11 @@
 			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Scoring</h1>
 			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
 
-			<div id="form-container">
+			<div style="margin-bottom: 30px;" >
 				<div class="text-upload-form">
-					Enter Text:
+					<span style="font-size: 20px;">Enter Text:</span>
 					<input type="text" class="text-input" placeholder="Type your text here" size="50">
-					<button onclick="submitText(this)">Submit</button>
+					<button onclick="submitText(this)" style="font-size: 16px; padding: 5px 10px; background-color: red; color: white;">Submit</button>
 					<p class="score-output"></p>
 				</div>
 			</div>
@@ -72,15 +72,4 @@
 				function removeForm() {
 					var container = document.getElementById('form-container');
 					if (container.children.length > 1) { // Ensure there's more than one form to allow removal
-						container.removeChild(container.lastChild); // Remove the last form
-					}
-				}
-			</script>
-		</div>
-		
-		
-		
-	</div>
-</body>
-
-</html>
+						contain

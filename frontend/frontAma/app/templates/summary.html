@@ -6,6 +6,7 @@
 
 </head>
 
+
 <body style="width: 100vw; height: 100vh;">
 	<div style="width: 100%; height: 100%; display: flex; flex-direction: row;">
 		<div style="width: 337px; height: 100%; display: flex; flex-direction: column; gap: 15px; padding: 19px 30px 19px 30px;">
@@ -38,16 +39,18 @@
 			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
 
 		
-		    <div>
-				CSV File Upload:
+		    <div style="margin-bottom: 30px;">
+				<span style="font-size: 20px;">CSV File Upload:</span>
 				<input type="text" id="csv-file-display" value="No CSV config file selected" readonly size="50">
-				<button onclick="document.getElementById('csvFile').click()">Upload CSV File</button>
+				<button onclick="document.getElementById('csvFile').click()" style="font-size: 16px; background-color: grey; padding: 5px 10px;">Upload CSV File</button>
 				<input type="file" id="csvFile" style="display:none;" accept=".csv" onchange="updateDisplayField(this.files)">
 			</div>
 			<div id="submit-btn-container">
 				<!-- Container will hold the submit button if a file is selected -->
 			</div>
+			<div>
 			<p id="output"></p>
+			</div>
 		
 			<script>
 				function updateDisplayField(files) {
@@ -62,23 +65,9 @@
 		
 						// Create a new submit button
 						var submitBtn = document.createElement('button');
-						submitBtn.textContent = 'Submit';
-						// Set onclick event for the submit button
-						submitBtn.onclick = function() {
-							document.getElementById('output').textContent = 'Output'; // Print 'Output' on submission
-						};
-						btnContainer.appendChild(submitBtn); // Add the button to the page
-					} else {
-						displayField.value = "No file selected";
-						btnContainer.innerHTML = ''; // Remove the submit button if no file is selected
-					}
-				}
-			</script>
-		</div>
-		
-		
-		
-	</div>
-</body>
-
-</html>
+            			submitBtn.textContent = 'Submit';
+            			// Apply styles for bigger button with red background
+            			submitBtn.style.fontSize = '16px'; // Larger font size
+            			submitBtn.style.padding = '5px 10px'; // Increased padding
+            			submitBtn.style.backgroundColor = 'red'; // Red background color
+            			submitBtn.style.color = 'wh
