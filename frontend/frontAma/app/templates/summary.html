@@ -70,4 +70,23 @@
             			submitBtn.style.fontSize = '16px'; // Larger font size
             			submitBtn.style.padding = '5px 10px'; // Increased padding
             			submitBtn.style.backgroundColor = 'red'; // Red background color
-            			submitBtn.style.color = 'wh
+            			submitBtn.style.color = 'white'; // Text color white for better readability
+            			// Set onclick event for the submit button
+						submitBtn.onclick = function() {
+							document.getElementById('output').textContent = 'Output'; // Print 'Output' on submission
+						};
+						btnContainer.appendChild(submitBtn); // Add the button to the page
+					} else {
+						displayField.value = "No file selected";
+						btnContainer.innerHTML = ''; // Remove the submit button if no file is selected
+					}
+				}
+			</script>
+		</div>
+		
+		
+		
+	</div>
+</body>
+
+</html>
