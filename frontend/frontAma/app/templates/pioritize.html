@@ -23,15 +23,266 @@
 				<a href="/pioritize" 
 				target="_blank" 
 				title="Goes to pioritize"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Pioritize</a>
+				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze</a>
+				<a href="/pioritizD" 
+				target="_blank" 
+				title="Goes to pioritize dynamic"
+				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze Dynamic</a>
 			</div>
 					
 		</div>
 
 
 		<div style="width: 174px; height: 44px;">
-			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Scoring</h1>
+			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Analyze</h1>
 			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
+			<div>
+				<select id="file-dropdown">
+					<option value="">Select a file</option>
+					<option value="iphone11.txt">iphone11</option>
+					<option value="iphone14.txt">iphone14</option>
+					<option value="iphone7 (refurbished).txt">iphone7 (refurbished)</option>
+					<option value="iphone7.txt">iphone7</option>
+					<option value="onePlus7T.txt">onePlus7T</option>
+					<option value="oppoA5.txt">oppoA5</option>
+					<option value="redmiA8.txt">redmiA8</option>
+					<option value="redmiNote8.txt">redmiNote8</option>
+					<option value="redmiNote9.txt">redmiNote9</option>
+					<option value="redmiNote9pro.txt">redmiNote9pro</option>
+					<option value="redmiNote9promax.txt">redmiNote9promax</option>
+					<option value="samsungM01.txt">samsungM01</option>
+					<option value="samsungM21.txt">samsungM21</option>
+					<option value="samsungM31.txt">samsungM31</option>
+					<option value="samsungZflip.txt">samsungZflip</option>
+					<option value="tecno.txt">tecno</option>
+					<option value="vivo.txt">vivo</option>
+					<!-- Add more options as needed -->
+				</select>
+			
+				<!-- Submit Button -->
+				<button id="submit-btn" onclick="submitChoice()">Submit</button>
+			
+				<pre id="file-content">
+					<!-- Selected file content will be displayed here -->
+				</pre>
+			
+				<script>
+					function submitChoice() {
+						var dropdown = document.getElementById('file-dropdown');
+						var filename = dropdown.value;
+						var displayText = '';
+			
+						switch(filename) {
+							case 'iphone11.txt':
+							displayText = `Product Name: Unknown Product
+							life: This feature suggests a long-lasting and durable product, leading to higher ratings as customers value longevity and reliability.
+							awesome: Customers perceive products with this feature as exceptional and impressive, leading to positive reviews.
+							best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+							return: This feature suggests potential issues with the product that may lead to returns or dissatisfaction, resulting in lower ratings from customers.
+							great: Customers view products with this feature as excellent and of high quality, resulting in positive reviews.
+							android: It may attract customers looking for a change or a different experience, potentially leading to higher ratings.
+							defective: Customers are likely to rate the product poorly if they perceive it as defective or prone to issues, leading to lower overall ratings.
+							buy: Customers may focus more on product features and experiences rather than the act of purchasing itself.
+							purchase: Customers may prioritize product performance and quality over the purchasing process.
+							camera: A good camera feature often leads to higher ratings as customers value photography capabilities in smartphones.
+							issue: Customers may appreciate reviews that address and resolve potential issues, leading to a more balanced view and potentially higher ratings.
+							amazon: Customers may focus more on the product itself rather than its availability on specific platforms.`;
+								break;
+							case 'iphone14.txt':
+							displayText = `Product Name: iphone14
+							best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+							awesome: Customers are likely to view products with this feature as exceptional and impressive, resulting in favorable reviews and high ratings.
+							good: Customers perceive products with this feature as satisfactory and decent, which often leads to moderately positive reviews and ratings.
+							battery: Customers may associate products with this feature as having subpar battery performance, resulting in lower ratings and less favorable reviews.
+							performance: Customers may interpret products with this feature as having mediocre or underwhelming performance, leading to slightly lower ratings and less enthusiastic reviews.
+							camera: Customers may perceive products with this feature as having decent camera quality, which can lead to slightly higher ratings and some positive reviews.`;
+								break;
+							case 'iphone7 (refurbished).txt':
+								displayText = `Product Name: iphone7 (refurbished)
+								great: Customers often perceive products with this feature as exceptional or outstanding, leading to higher ratings and positive reviews.
+								good: Customers view products with this feature as above average or satisfactory, contributing to positive reviews.
+								new: Customers tend to prefer products labeled as new, associating them with quality and reliability.
+								screen: A high-quality screen is often associated with a better user experience, leading to more favorable reviews.
+								use: Customers appreciate products that are user-friendly and intuitive, which can result in better reviews.
+								work: Customers value products that work effectively and efficiently, leading to slightly higher ratings.
+								battery: While a poor battery performance can lead to negative reviews, other features may play a more crucial role in shaping overall perceptions.
+								charge: While a fast charging capability can be a desirable feature, its impact on overall ratings may be minimal compared to other more substantial features.`;
+								break;
+							case 'iphone7.txt':
+								displayText = `Product Name: iphone7
+								good: Customers perceive products with this feature as high-quality and reliable, leading to favorable reviews and higher ratings.
+								battery life: A longer battery life is highly valued by customers, as it enhances the usability and convenience of the product, resulting in positive reviews and higher ratings.
+								android: Customers who prefer the Android operating system may view products with this feature more favorably, leading to positive reviews and higher ratings.
+								use: Products that are easy to use and navigate tend to receive positive feedback from customers, resulting in higher ratings.
+								buy: Customers may perceive products with this feature negatively, potentially leading to lower ratings.
+								phone: Customers expect a phone to perform well and meet their communication needs, which can contribute to positive reviews and ratings.
+								work: Customers value products that work effectively and efficiently, leading to favorable reviews and higher ratings.
+								battery: Issues related to the battery, such as short battery life or poor performance, can lead to lower ratings from customers.
+								service: Good customer service can enhance the overall customer experience, resulting in positive reviews and higher ratings.
+								time: Products that save time or offer efficient solutions may receive positive feedback from customers, contributing to higher ratings.
+								day: Customers may not find this feature particularly beneficial, potentially leading to slightly lower ratings.`;
+								break;
+							case 'onePlus7T.txt':
+								displayText = `Product Name: onePlus7T
+								bad: Customers are likely to perceive products with this feature unfavorably, leading to lower ratings and negative reviews.
+								great: Customers perceive products with this feature as excellent and exceptional, resulting in positive reviews and high ratings.
+								good: Customers are likely to view products with this feature favorably, leading to satisfactory reviews and ratings.
+								amazon: Customers may perceive products associated with this feature as reliable or convenient, potentially resulting in higher ratings and positive reviews.
+								return: Products with this feature may be perceived as problematic or prone to issues, leading to lower ratings and negative feedback.
+								screen: Customers may find products with this feature less appealing or of lower quality, potentially resulting in slightly lower ratings.
+								work: Customers may view products with this feature as unreliable or faulty, leading to reduced satisfaction and lower ratings.
+								issue: Customers may perceive products with this feature as problematic or flawed, resulting in slightly lower ratings.
+								use: Customers may find products with this feature user-friendly or practical, potentially leading to slightly higher ratings.
+								thing: While this feature may not significantly sway customer opinions, it could contribute slightly to more positive reviews and ratings.`;
+								break;
+							case 'oppoA5.txt':
+								displayText = `Product Name: oppoA5
+								good: Customers perceive products with this feature as reliable, high-quality, and meeting their expectations, leading to favorable reviews and higher ratings.
+								game: Customers might perceive products with this feature as more specialized or limited in utility, potentially leading to lower ratings from those who do not prioritize gaming capabilities.
+								battery life: Products with longer battery life are often perceived as more convenient, reliable, and user-friendly, leading to higher ratings from customers valuing this aspect.
+								screen: Customers may interpret products with this feature as having subpar display quality or issues, potentially resulting in lower ratings and negative reviews.
+								buy: Customers might associate this feature with purchasing difficulties, confusing processes, or additional costs, leading to lower ratings and dissatisfaction.
+								charge: Customers appreciate products with efficient charging capabilities, which can enhance their overall experience and result in slightly higher ratings.
+								price: Higher prices may deter some customers or lead to perceptions of poor value for money, potentially resulting in lower ratings and reviews.
+								like: Customers may appreciate products with this feature, indicating user-friendly design or personalization options, contributing slightly to higher ratings.`;
+								break;
+							case 'redmiA8.txt':
+								displayText = `Product Name: redmiA8
+								midnight grey: Customers often perceive products in this color as sleek, modern, and aesthetically pleasing, leading to higher ratings and positive reviews.
+								grey: This could be due to the perception that plain grey might be considered less appealing or dull compared to other color options.
+								sea: Customers may find this color refreshing, calming, and unique, which could lead to more positive reviews and ratings.
+								use: This feature suggests that the product is practical, user-friendly, and serves its intended purpose well, which often results in higher customer satisfaction and positive reviews.
+								price: Customers appreciate products that offer good value for their cost, and a reasonable price point often leads to higher ratings and positive feedback.
+								blue: While blue is a popular color choice, its presence alone may not significantly sway customer perceptions or reviews in either a positive or negative direction.`;
+								break;
+							case 'redmiNote8.txt':
+								displayText = `Product Name: redmiNote8
+								best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+								awesome: Customers are likely to view products with this feature as impressive and appealing, contributing to higher ratings.
+								price: When customers perceive a product as offering good value for its price, it tends to lead to higher satisfaction levels and positive reviews.
+								good: Customers associate products with this feature as meeting their expectations and delivering satisfactory performance.
+								buy: Customers may interpret products with this feature as worth purchasing, contributing to higher ratings.
+								amazon: Customers may perceive products associated with a reputable platform like Amazon as reliable and trustworthy, potentially leading to higher ratings.
+								camera: While a good camera is important to many customers, the absence of a strong camera feature may lead to slightly lower ratings compared to products with exceptional camera capabilities.
+								quality: Customers value products that are perceived to be of high quality, leading to favorable reviews and ratings.
+								use: Customers may expect products to be user-friendly and easy to use, so the absence of this feature could result in lower ratings.`;
+								break;
+							case 'redmiNote9.txt':
+								displayText = `Product Name: redmiNote9
+								bad: Customers are likely to perceive products with this feature as subpar or unsatisfactory, leading to lower ratings and negative reviews.
+								good: Customers view products with this feature favorably, considering them as satisfactory or above average, resulting in higher ratings and positive reviews.
+								amazon: Customers may associate this feature with certain expectations or experiences related to Amazon, which could impact their overall perception of the product.
+								nice: Customers tend to perceive products with this feature as pleasant or appealing, contributing to positive reviews and higher ratings.
+								high: Customers might interpret products with this feature as expensive or premium, which could influence their overall rating and perception.
+								charge: Customers may associate this feature with issues related to charging, impacting their overall perception of the product negatively.
+								price: Customers often consider the price of a product when reviewing it, and a favorable price perception can lead to higher ratings.
+								issue: Customers appreciate transparency and honesty, so acknowledging and addressing any issues can lead to higher ratings.
+								quality: Customers value high-quality products, and the presence of this feature can contribute to positive reviews and ratings.
+								time: Customers might associate this feature with issues related to delivery time or product lifespan, impacting their overall perception of the product.`;
+								break;
+							case 'redmiNote9pro.txt':
+								displayText = `Product Name: redmiNote9pro
+								return: This could indicate that a higher rate of returns is associated with lower product ratings and decreased customer satisfaction.
+								purchase: A smooth purchasing experience likely leads to higher product ratings and increased customer satisfaction.
+								problem: Customers are likely to leave lower ratings if they face problems with the product.
+								mi: This could lead to higher product ratings and increased customer satisfaction due to the brand association.
+								camera: A better camera quality likely leads to higher product ratings and improved customer satisfaction.
+								buy: This could indicate that challenges or complexities during the purchase phase lead to lower ratings.
+								charge: A fast charging feature or long battery life likely leads to higher product ratings and increased customer satisfaction.
+								work: If the product does not work as expected, it can lead to lower ratings and decreased customer satisfaction.
+								hang: This can significantly impact customer satisfaction.
+								amazon: This could imply that certain associations with Amazon affect customer perceptions.
+								time: Longer wait times or products with a short lifespan can lead to lower ratings and decreased customer satisfaction.`;
+								break;
+							case 'redmiNote9promax.txt':
+								displayText = `Product Name: redmiNote9promax
+								bad: Customers are likely to perceive products with this feature as subpar or flawed, leading to lower ratings and negative reviews.
+								best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+								good: Customers view products with this feature favorably, leading to positive reviews and ratings.
+								price: Customers often appreciate products that offer good value for the price, resulting in higher ratings.
+								look: The visual appeal and aesthetics of a product play a significant role in customer satisfaction, leading to positive reviews.
+								hang: Customers are often frustrated by products that have performance issues like hanging, resulting in negative reviews.
+								charge: Customers value products that have efficient charging capabilities, leading to higher ratings.
+								work: Customers expect products to function properly, and any issues related to performance can lead to negative reviews.
+								battery: Customers often prioritize good battery life in products, and any shortcomings in this area can lead to negative reviews.
+								day: Customers may appreciate products that offer specific features related to daily use, leading to slightly higher ratings.
+								use: Customers value products that are user-friendly and easy to use, resulting in higher ratings.
+								amazon: Customers may have varied preferences regarding integrations with specific platforms like Amazon, leading to neutral to slightly negative reviews.`;
+								break;
+							case 'samsungM01.txt':
+								displayText = `Product Name: samsungM01
+								good: Customers perceive products with this feature as meeting their expectations and being of high quality, leading to favorable reviews and higher ratings.
+								price: A reasonable price point often leads to increased customer satisfaction and positive reviews, as customers feel they are getting value for their money.
+								display: Customers appreciate products with a clear and vibrant display, leading to enhanced user experience and higher ratings.
+								return: Customers may perceive products with complicated return processes or policies as less desirable, potentially resulting in lower ratings.
+								buy: This feature may indicate ease of purchase or availability, leading to slightly higher ratings from customers.
+								battery: Customers often value devices with long-lasting batteries, and a weaker battery performance could result in lower ratings.
+								amazon: Customers may prefer products purchased directly from the manufacturer or reputable retailers, potentially impacting their perceptions and ratings.
+								core: Customers may associate the core features of a product with its essential functions, and any shortcomings in this aspect could lead to slightly lower ratings.`;
+								break;
+							case 'samsungM21.txt':
+								displayText = `Product Name: Unknown Product
+								battery: A long-lasting battery life is often a crucial factor for customers, leading to higher satisfaction and better reviews.
+								charge: A slow charging speed or inefficient charging process can lead to lower product ratings and dissatisfaction among users.
+								use: Difficulties in usability, complex features, or poor user experience can result in lower product ratings and decreased customer satisfaction.
+								black: Color options play a significant role in customer satisfaction, and a less popular color choice can impact product ratings negatively.
+								raven: This indicates that customers may not find the 'raven' color appealing, which can affect their overall satisfaction and influence product ratings.
+								midnight: A popular and aesthetically pleasing color choice can lead to higher customer satisfaction and better product ratings.
+								mah: A higher milliampere-hour (mAh) rating is often associated with longer battery life, which can positively impact customer satisfaction and product ratings.
+								blue: While not as significant as other features, a preferred color choice like 'blue' can still contribute to overall customer satisfaction and potentially higher product ratings.`;
+								break;
+							case 'samsungM31.txt':
+								displayText = `Product Name: samsungM31
+								battery: Customers often prioritize a long-lasting battery in their devices, leading to higher satisfaction levels and positive reviews when this feature is present in a product like the Samsung M31.
+								black: While color preference is subjective, a negative coefficient implies that the color black may not be as appealing to customers in the context of the Samsung M31, potentially leading to slightly lower satisfaction levels.
+								use: Customers appreciate products that are user-friendly and easy to use, leading to higher satisfaction levels and favorable reviews when the Samsung M31 is perceived as intuitive and user-friendly.
+								day: This feature may imply functionalities or modes related to daytime usage, which customers find valuable in the Samsung M31, ultimately leading to higher satisfaction and positive reviews.
+								mirage: This feature may not align with customer preferences or expectations for the Samsung M31, potentially leading to slightly lower satisfaction levels and less favorable reviews.
+								ocean: This feature, possibly related to a specific color or design element, might not resonate well with customers in the context of the Samsung M31, leading to slightly decreased satisfaction levels.
+								camera: A good camera is often a crucial factor for customers when choosing a smartphone like the Samsung M31, contributing to slightly higher satisfaction levels and positive reviews when the camera quality meets expectations.
+								blue: Color preferences vary among customers, and in the case of the Samsung M31, the color blue may not significantly influence satisfaction levels or overall reviews.`;
+								break;
+							case 'samsungZflip.txt':
+								displayText = `Product Name: samsungZflip
+								good: Customers perceive products with this feature as of high quality and reliable, leading to favorable reviews and higher ratings.
+								money: This feature could potentially lead to lower product ratings as customers might feel they are not getting their money's worth.
+								price: Customers might be dissatisfied with the product if they feel it does not justify the cost.
+								screen: This could result in lower product ratings as the screen is a crucial aspect of user experience for many consumers.
+								worth: This feature tends to positively influence customer satisfaction and product ratings as customers feel they are getting good value for their money.
+								month: This feature can lead to higher product ratings as customers value products that can last for an extended period.
+								buy: This feature can contribute positively to customer satisfaction and product ratings as customers feel confident in their choice to buy the product.
+								fold: This feature can enhance customer satisfaction and product ratings as customers appreciate innovative design elements like a foldable feature.`;
+								break;
+							case 'tecno.txt':
+								displayText = `Product Name: tecno
+								good: Customers perceive products with this feature as reliable, high-quality, and meeting their expectations, leading to favorable reviews and higher ratings.
+								comet: Customers may perceive this feature as unnecessary, confusing, or even detracting from the overall product experience, resulting in lower ratings and less positive reviews.
+								screen: A high-quality screen is often associated with enhanced user experience, clear visuals, and overall product value, leading to higher ratings and positive feedback.
+								black: Black color is often associated with elegance, sophistication, and versatility, which can enhance the perceived value of the product and result in higher ratings from customers.
+								display: This could be due to issues with the display quality, visibility, or functionality, leading to lower ratings and less positive reviews from customers.
+								camera: A good camera is often a key selling point for many consumers, contributing to positive reviews and higher ratings for the product.
+								big: Customers may perceive a larger size as offering more functionality, comfort, or value, leading to slightly higher ratings and positive feedback.
+								video: Video capabilities can enhance the product's versatility and entertainment value, contributing to slightly higher ratings from customers.
+								like: While customers may appreciate this feature, its presence alone is unlikely to significantly influence overall ratings and reviews.`;
+								break;
+							case 'vivo.txt':
+								displayText = `Product Name: vivo
+								camera: A good camera is often associated with better picture quality and enhanced user experience, leading to favorable reviews and higher ratings.
+								life: Customers appreciate products that can last longer between charges, contributing to overall satisfaction.
+								charge: Products that have slower charging times or inefficient charging systems may lead to some dissatisfaction among users, reflecting in lower ratings.
+								nice: This positive perception can contribute to higher customer satisfaction and product ratings, as users appreciate products that are visually appealing and well-presented.
+								work: Products that are perceived as not working efficiently or as expected may lead to lower ratings and less positive reviews from customers.`;
+								break;
+
+							// Add more cases as needed
+							default:
+								displayText = 'Please select a file.';
+						}
+			
+						document.getElementById('file-content').textContent = displayText;
+					}
+				</script>
+			</div>
 		</div>
 		
 		

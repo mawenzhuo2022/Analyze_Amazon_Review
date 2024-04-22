@@ -34,46 +34,8 @@
 
 
 		<div style="width: 174px; height: 44px;">
-			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Summarization</h1>
+			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Analyze Dynamic</h1>
 			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
-
-		
-		    <div>
-				CSV File Upload:
-				<input type="text" id="csv-file-display" value="No CSV config file selected" readonly size="50">
-				<button onclick="document.getElementById('csvFile').click()">Upload CSV File</button>
-				<input type="file" id="csvFile" style="display:none;" accept=".csv" onchange="updateDisplayField(this.files)">
-			</div>
-			<div id="submit-btn-container">
-				<!-- Container will hold the submit button if a file is selected -->
-			</div>
-			<p id="output"></p>
-		
-			<script>
-				function updateDisplayField(files) {
-					var displayField = document.getElementById('csv-file-display');
-					var btnContainer = document.getElementById('submit-btn-container');
-		
-					if (files.length > 0) {
-						displayField.value = files[0].name; // Display the file name
-		
-						// Clear any existing content in the button container
-						btnContainer.innerHTML = '';
-		
-						// Create a new submit button
-						var submitBtn = document.createElement('button');
-						submitBtn.textContent = 'Submit';
-						// Set onclick event for the submit button
-						submitBtn.onclick = function() {
-							document.getElementById('output').textContent = 'Output'; // Print 'Output' on submission
-						};
-						btnContainer.appendChild(submitBtn); // Add the button to the page
-					} else {
-						displayField.value = "No file selected";
-						btnContainer.innerHTML = ''; // Remove the submit button if no file is selected
-					}
-				}
-			</script>
 		</div>
 		
 		
