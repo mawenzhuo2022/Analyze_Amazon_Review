@@ -27,15 +27,10 @@ def list_csv_filenames(folder_path):
     return dataset_filenames
 
 
-def read_upload_csv_file(self, file_obj):
-    # 只是简单地返回文件对象
-    return file_obj
-
-
 def main():
     folder_path = '../../dat/analyze/dataset'
     dataset_filenames = list_csv_filenames(folder_path)
-
+    print(dataset_filenames)
     for filename in dataset_filenames:
         print(f"Processing dataset: {filename}")
 
