@@ -10,18 +10,27 @@ from cluster_analysis import main as cluster_analysis_main
 from feature_engineering import main as feature_engineering_main
 from train_model import main as train_model_main
 from results_interpretation import main as results_interpretation_main
+import os
 
 
-dataset_filenames = {
-    "iphone7 (refurbished)", "iphone7", "iphone11",
-    "iphone14", "onePlus7T", "oppoA5",
-    "redmiA8", "redmiNote8", "redmiNote9",
-    "redmiNote9pro", "redmiNote9promax", "samsungM01",
-    "samsungM21", "samsungM31", "samsungZflip",
-    "tecno", "vivo"
-}
+def list_csv_filenames(folder_path):
+    """
+    This function returns a list of .csv filenames in the given folder.
+
+    Parameters:
+    folder_path (str): The path to the folder from which to list .csv filenames.
+
+    Returns:
+    list: A list of .csv filenames found in the folder.
+    """
+    dataset_filenames = {filename[:-4] for filename in os.listdir(folder_path) if filename.endswith('.csv')}
+    return dataset_filenames
+
 
 def main():
+    folder_path = '../../dat/analyze/dataset'
+    dataset_filenames = list_csv_filenames(folder_path)
+    print(dataset_filenames)
     for filename in dataset_filenames:
         print(f"Processing dataset: {filename}")
 
