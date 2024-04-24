@@ -1,0 +1,12 @@
+Product Name: redmiNote9pro
+return: This could indicate that a higher rate of returns is associated with lower product ratings and decreased customer satisfaction.
+purchase: A smooth purchasing experience likely leads to higher product ratings and increased customer satisfaction.
+problem: Customers are likely to leave lower ratings if they face problems with the product.
+mi: This could lead to higher product ratings and increased customer satisfaction due to the brand association.
+camera: A better camera quality likely leads to higher product ratings and improved customer satisfaction.
+buy: This could indicate that challenges or complexities during the purchase phase lead to lower ratings.
+charge: A fast charging feature or long battery life likely leads to higher product ratings and increased customer satisfaction.
+work: If the product does not work as expected, it can lead to lower ratings and decreased customer satisfaction.
+hang: This can significantly impact customer satisfaction.
+amazon: This could imply that certain associations with Amazon affect customer perceptions.
+time: Longer wait times or products with a short lifespan can lead to lower ratings and decreased customer satisfaction.

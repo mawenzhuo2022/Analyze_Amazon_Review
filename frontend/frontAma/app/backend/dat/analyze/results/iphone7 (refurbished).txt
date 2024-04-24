@@ -1,0 +1,9 @@
+Product Name: iphone7 (refurbished)
+great: Customers often perceive products with this feature as exceptional or outstanding, leading to higher ratings and positive reviews.
+good: Customers view products with this feature as above average or satisfactory, contributing to positive reviews.
+new: Customers tend to prefer products labeled as new, associating them with quality and reliability.
+screen: A high-quality screen is often associated with a better user experience, leading to more favorable reviews.
+use: Customers appreciate products that are user-friendly and intuitive, which can result in better reviews.
+work: Customers value products that work effectively and efficiently, leading to slightly higher ratings.
+battery: While a poor battery performance can lead to negative reviews, other features may play a more crucial role in shaping overall perceptions.
+charge: While a fast charging capability can be a desirable feature, its impact on overall ratings may be minimal compared to other more substantial features.

@@ -1,75 +1,230 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Amazon Review Analyze</title>
+  </head>
 
-<head>
-	<title>Amazon Review Analyze</title>
+  <body style="width: 100vw; height: 100vh">
+    <div style="width: 100%; height: 100%; display: flex; flex-direction: row">
+      <div
+        style="
+          width: 337px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          padding: 19px 30px 19px 30px;
+        "
+      >
 
-</head>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            width: 308px;
+            height: 137px;
+            padding: 0px 30px;
+            gap: 2px;
+          "
+        >
+          <h1
+            style="
+              font-family: 'Inter', sans-serif;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 21.78px;
+              color: #656973;
+              margin-bottom: 2px;
+            "
+          >
+            Overview
+          </h1>
+          <a
+            href="/summary"
+            target="_blank"
+            title="Goes to summary"
+            style="
+              text-decoration: none;
+              font-family: 'Inter', sans-serif;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #656974;
+              margin-bottom: 2px;
+            "
+            >Summarization</a
+          >
+          <a
+            href="/scoring"
+            target="_blank"
+            title="Goes to scoring"
+            style="
+              text-decoration: none;
+              font-family: 'Inter', sans-serif;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #656974;
+              margin-bottom: 2px;
+            "
+            >Scoring</a
+          >
+          <a
+            href="/pioritize"
+            target="_blank"
+            title="Goes to pioritize"
+            style="
+              text-decoration: none;
+              font-family: 'Inter', sans-serif;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #656974;
+              margin-bottom: 2px;
+            "
+            >Analyze</a
+          >
+          <a
+            href="/pioritizD"
+            target="_blank"
+            title="Goes to pioritize dynamic"
+            style="
+              text-decoration: none;
+              font-family: 'Inter', sans-serif;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #656974;
+              margin-bottom: 2px;
+            "
+            >Analyze Dynamic</a
+          >
+        </div>
+      </div>
 
-<body style="width: 100vw; height: 100vh;">
-	<div style="width: 100%; height: 100%; display: flex; flex-direction: row;">
-		<div style="width: 337px; height: 100%; display: flex; flex-direction: column; gap: 15px; padding: 19px 30px 19px 30px;">
-			<img style="width: 150px; margin-bottom: 33px; " src="Amazon_logo.png"/>
-			<div style="display: flex; flex-direction: column; width: 308px; height: 137px; padding: 0px 30px; gap: 2px;">
-				<h1 style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; line-height: 21.78px; color: #656973; margin-bottom: 2px;">Overview</h1>
-				<a href="/summary" 
-				target="_blank" 
-				title="Goes to summary"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Summarization</a>
-				<a href="/scoring" 
-				target="_blank" 
-				title="Goes to scoring"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Scoring</a>
-				<a href="/pioritize" 
-				target="_blank" 
-				title="Goes to pioritize"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze</a>
-				<a href="/pioritizD" 
-				target="_blank" 
-				title="Goes to pioritize dynamic"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze Dynamic</a>
-			</div>
-					
-		</div>
+      <div style="width: 174px; height: 44px">
+        <h1
+          style="
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 43.57px;
+            color: #262930;
+            margin-bottom: 10px;
+            margin-top: 75px;
+          "
+        >
+          Scoring
+        </h1>
+        <hr style="width: 968px; border: 1px; border-top: 1px solid #e3e8ec" />
 
+        <div style="margin-bottom: 30px">
+          <div class="text-upload-form">
+            <span style="font-size: 20px">Enter Aspect:</span>
+            <input
+              type="text"
+              class="text-input"
+              id="product-aspects"
+              placeholder="Please enter product aspects"
+              size="50"
+            />
+          </div>
 
-		<div style="width: 174px; height: 44px;">
-			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Scoring</h1>
-			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
+          <div class="text-upload-form">
+            <span style="font-size: 20px">Enter Text:</span>
+            <input
+              type="text"
+              class="text-input"
+              id="individual-review"
+              placeholder="Past an individual placeholder here "
+              size="50"
+            />
+            <button
+              onclick="submitText(this)"
+              style="
+                font-size: 16px;
+                padding: 5px 10px;
+                background-color: red;
+                color: white;
+              "
+            >
+              Submit
+            </button>
+            <p class="score-output"></p>
+          </div>
+        </div>
+        <button onclick="addForm()" style="font-size: 16px; background-color: green; padding: 5px 10px;">+</button>
+        <button onclick="removeForm()" style="font-size: 16px; background-color: red; padding: 5px 10px;">-</button>
+        </div>
+        <script>
+          function getAspects() {
+            // Selecting the input element by its id and returning its value
+            return document.getElementById("product-aspects").value;
+          }
 
-			<div style="margin-bottom: 30px;" >
-				<div class="text-upload-form">
-					<span style="font-size: 20px;">Enter Text:</span>
-					<input type="text" class="text-input" placeholder="Type your text here" size="50">
-					<button onclick="submitText(this)" style="font-size: 16px; padding: 5px 10px; background-color: red; color: white;">Submit</button>
-					<p class="score-output"></p>
-				</div>
-			</div>
-			<button onclick="addForm()">+</button>
-			<button onclick="removeForm()">-</button>
-		
-			<script>
-				function submitText(button) {
-					var form = button.parentNode; // Get the parent div of the button
-					var textInput = form.querySelector('.text-input'); // Get the text input within this form
-					var output = form.querySelector('.score-output'); // Get the score output paragraph within this form
-					if (textInput.value) { // Check if text is not empty
-						output.textContent = 'Score'; // Display 'Score'
-					} else {
-						output.textContent = 'Please enter some text before submitting.'; // Prompt to enter text
-					}
-				}
-		
-				function addForm() {
-					var container = document.getElementById('form-container'); // Get the container
-					var originalForm = document.querySelector('.text-upload-form'); // Get the original form to clone
-					var clone = originalForm.cloneNode(true); // Clone the form deeply (including all child elements)
-					clone.querySelector('.text-input').value = ""; // Clear the text input in the cloned form
-					clone.querySelector('.score-output').textContent = ""; // Clear the output in the cloned form
-					container.appendChild(clone); // Append the cloned form to the container
-				}
-		
-				function removeForm() {
-					var container = document.getElementById('form-container');
-					if (container.children.length > 1) { // Ensure there's more than one form to allow removal
-						contain
+          function submitText(button) {
+            var aspects = getAspects();
+            var form = button.parentNode; // Get the parent div of the button
+            var reviewInput = document.getElementById("individual-review"); // Get the text input
+            var output = form.querySelector(".score-output"); // Get the score output paragraph within this form
+
+            if (reviewInput && reviewInput.value) {
+              // Check if the input exists and is not empty
+              output.textContent = "Scoring..."; // Indicate scoring is in process
+              scoreReview(aspects, reviewInput.value, output);
+            } else {
+              output.textContent = "Please enter some text before submitting."; // Prompt to enter text if empty
+            }
+          }
+
+          function scoreReview(aspects, review, outputElement) {
+            // Example AJAX setup to send data to the server
+            fetch("/scoring/upload/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                // Optionally add other headers as required, e.g., CSRF token if needed
+              },
+              body: JSON.stringify({ aspects: aspects, review: review }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.error) {
+                  outputElement.textContent = "Error: " + data.error;
+                } else {
+                  outputElement.textContent = data.summary; // Assuming the server returns a field 'summary'
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                outputElement.textContent = "Failed to process the request.";
+              });
+          }
+
+          function addForm() {
+            var container = document.getElementById("form-container");
+            var originalForm = document.querySelector(".text-upload-form").cloneNode(true);
+            originalForm.querySelector(".text-input").value = "";
+            originalForm.querySelector(".score-output").textContent = "";
+            container.appendChild(originalForm);
+          }
+        
+          function removeForm() {
+            var container = document.getElementById('form-container');
+            if (container.children.length > 1) {
+              container.removeChild(container.lastChild);
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+Product Name: Unknown Product
+life: This feature suggests a long-lasting and durable product, leading to higher ratings as customers value longevity and reliability.
+awesome: Customers perceive products with this feature as exceptional and impressive, leading to positive reviews.
+best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+return: This feature suggests potential issues with the product that may lead to returns or dissatisfaction, resulting in lower ratings from customers.
+great: Customers view products with this feature as excellent and of high quality, resulting in positive reviews.
+android: It may attract customers looking for a change or a different experience, potentially leading to higher ratings.
+defective: Customers are likely to rate the product poorly if they perceive it as defective or prone to issues, leading to lower overall ratings.
+buy: Customers may focus more on product features and experiences rather than the act of purchasing itself.
+purchase: Customers may prioritize product performance and quality over the purchasing process.
+camera: A good camera feature often leads to higher ratings as customers value photography capabilities in smartphones.
+issue: Customers may appreciate reviews that address and resolve potential issues, leading to a more balanced view and potentially higher ratings.
+amazon: Customers may focus more on the product itself rather than its availability on specific platforms.

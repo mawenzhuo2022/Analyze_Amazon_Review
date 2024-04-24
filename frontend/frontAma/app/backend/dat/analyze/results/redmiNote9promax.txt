@@ -1,0 +1,13 @@
+Product Name: redmiNote9promax
+bad: Customers are likely to perceive products with this feature as subpar or flawed, leading to lower ratings and negative reviews.
+best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+good: Customers view products with this feature favorably, leading to positive reviews and ratings.
+price: Customers often appreciate products that offer good value for the price, resulting in higher ratings.
+look: The visual appeal and aesthetics of a product play a significant role in customer satisfaction, leading to positive reviews.
+hang: Customers are often frustrated by products that have performance issues like hanging, resulting in negative reviews.
+charge: Customers value products that have efficient charging capabilities, leading to higher ratings.
+work: Customers expect products to function properly, and any issues related to performance can lead to negative reviews.
+battery: Customers often prioritize good battery life in products, and any shortcomings in this area can lead to negative reviews.
+day: Customers may appreciate products that offer specific features related to daily use, leading to slightly higher ratings.
+use: Customers value products that are user-friendly and easy to use, resulting in higher ratings.
+amazon: Customers may have varied preferences regarding integrations with specific platforms like Amazon, leading to neutral to slightly negative reviews.

@@ -1,0 +1,10 @@
+Product Name: redmiNote8
+best: Customers perceive products with this feature as top-tier and superior, leading to positive reviews and high ratings.
+awesome: Customers are likely to view products with this feature as impressive and appealing, contributing to higher ratings.
+price: When customers perceive a product as offering good value for its price, it tends to lead to higher satisfaction levels and positive reviews.
+good: Customers associate products with this feature as meeting their expectations and delivering satisfactory performance.
+buy: Customers may interpret products with this feature as worth purchasing, contributing to higher ratings.
+amazon: Customers may perceive products associated with a reputable platform like Amazon as reliable and trustworthy, potentially leading to higher ratings.
+camera: While a good camera is important to many customers, the absence of a strong camera feature may lead to slightly lower ratings compared to products with exceptional camera capabilities.
+quality: Customers value products that are perceived to be of high quality, leading to favorable reviews and ratings.
+use: Customers may expect products to be user-friendly and easy to use, so the absence of this feature could result in lower ratings.
