@@ -161,8 +161,6 @@
             <p class="score-output"></p>
           </div>
         </div>
-        <button onclick="addForm()" style="font-size: 16px; background-color: green; padding: 5px 10px;">+</button>
-        <button onclick="removeForm()" style="font-size: 16px; background-color: red; padding: 5px 10px;">-</button>
         </div>
         <script>
           function getAspects() {
@@ -209,20 +207,7 @@
               });
           }
 
-          function addForm() {
-            var container = document.getElementById("form-container");
-            var originalForm = document.querySelector(".text-upload-form").cloneNode(true);
-            originalForm.querySelector(".text-input").value = "";
-            originalForm.querySelector(".score-output").textContent = "";
-            container.appendChild(originalForm);
-          }
-        
-          function removeForm() {
-            var container = document.getElementById('form-container');
-            if (container.children.length > 1) {
-              container.removeChild(container.lastChild);
-            }
-          }
+
         </script>
       </div>
     </div>
