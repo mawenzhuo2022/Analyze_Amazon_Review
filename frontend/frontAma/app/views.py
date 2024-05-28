@@ -16,23 +16,23 @@ print(sys.path)
 
 # Create your views here.
 def index(_: HttpRequest):
-    template = loader.get_template('../templates/index.html')
+    template = loader.get_template('../templates/index/index.html')
     return HttpResponse(template.render())
 
 def summary(_: HttpRequest):
-    template = loader.get_template('../templates/summary.html')
+    template = loader.get_template('../templates/summary/summary.html')
     return HttpResponse(template.render())
 
 def scoring(_: HttpRequest):
-    template = loader.get_template('../templates/scoring.html')
+    template = loader.get_template('../templates/scoring/scoring.html')
     return HttpResponse(template.render())
 
-def pioritize(_: HttpRequest):
-    template = loader.get_template('../templates/pioritize.html')
+def prioritize(_: HttpRequest):
+    template = loader.get_template('../templates/prioritize/prioritize.html')
     return HttpResponse(template.render())
 
-def pioritizeD(_: HttpRequest):
-    template = loader.get_template('../templates/pioritizeD.html')
+def prioritizeD(_: HttpRequest):
+    template = loader.get_template('../templates/prioritizeD/prioritizeD.html')
     return HttpResponse(template.render())
 
 """backend function for summarization """
@@ -125,7 +125,7 @@ class ScoreReview(APIView):
             return Response({"error": str(e)}, status=500)
 
 
-class Pioritize(APIView):
+class Prioritize(APIView):
     parser_classes = [MultiPartParser]
 
     def post(self, request, format=None):

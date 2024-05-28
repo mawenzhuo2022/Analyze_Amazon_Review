@@ -4,111 +4,29 @@
     <title>Amazon Review Analyze</title>
   </head>
 
-  <body style="width: 100vw; height: 100vh">
-    <div style="width: 100%; height: 100%; display: flex; flex-direction: row">
-      <div
-        style="
-          width: 337px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-          padding: 19px 30px 19px 30px;
-        "
-      >
+ <body style="width: 100vw; height: 100vh;">
+<div style="width: 100%; height: 100%; display: flex; flex-direction: row;">
+    <div style="width: 337px; height: 100%; display: flex; flex-direction: column; gap: 15px; padding: 19px 30px 19px 30px;">
 
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            width: 308px;
-            height: 137px;
-            padding: 0px 30px;
-            gap: 2px;
-          "
-        >
-          <h1
-            style="
-              font-family: 'Inter', sans-serif;
-              font-weight: 700;
-              font-size: 18px;
-              line-height: 21.78px;
-              color: #656973;
-              margin-bottom: 2px;
-            "
-          >
-            Overview
-          </h1>
-          <a
-            href="/summary"
-            target="_blank"
-            title="Goes to summary"
-            style="
-              text-decoration: none;
-              font-family: 'Inter', sans-serif;
-              font-size: 18px;
-              font-weight: 400;
-              line-height: 22px;
-              letter-spacing: 0em;
-              text-align: left;
-              color: #656974;
-              margin-bottom: 2px;
-            "
-            >Summarization</a
-          >
-          <a
-            href="/scoring"
-            target="_blank"
-            title="Goes to scoring"
-            style="
-              text-decoration: none;
-              font-family: 'Inter', sans-serif;
-              font-size: 18px;
-              font-weight: 400;
-              line-height: 22px;
-              letter-spacing: 0em;
-              text-align: left;
-              color: #656974;
-              margin-bottom: 2px;
-            "
-            >Scoring</a
-          >
-          <a
-            href="/pioritize"
-            target="_blank"
-            title="Goes to pioritize"
-            style="
-              text-decoration: none;
-              font-family: 'Inter', sans-serif;
-              font-size: 18px;
-              font-weight: 400;
-              line-height: 22px;
-              letter-spacing: 0em;
-              text-align: left;
-              color: #656974;
-              margin-bottom: 2px;
-            "
-            >Analyze</a
-          >
-          <a
-            href="/pioritizD"
-            target="_blank"
-            title="Goes to pioritize dynamic"
-            style="
-              text-decoration: none;
-              font-family: 'Inter', sans-serif;
-              font-size: 18px;
-              font-weight: 400;
-              line-height: 22px;
-              letter-spacing: 0em;
-              text-align: left;
-              color: #656974;
-              margin-bottom: 2px;
-            "
-            >Analyze Dynamic</a
-          >
+        <div style="display: flex; flex-direction: column; width: 308px; height: 137px; padding: 0px 30px; gap: 2px;">
+            <h1 style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; line-height: 21.78px; color: #656973; margin-bottom: 2px;">
+                Overview</h1>
+            <a href="/summary"
+               title="Goes to summary"
+               style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Summarization</a>
+            <a href="/scoring"
+               title="Goes to scoring"
+               style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Scoring</a>
+            <a href="/prioritize"
+               title="Goes to prioritize"
+               style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze</a>
+            <a href="/prioritizD"
+               title="Goes to prioritize dynamic"
+               style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze Dynamic</a>
         </div>
-      </div>
+
+    </div>
+
 
       <div style="width: 174px; height: 44px">
         <h1
@@ -122,7 +40,7 @@
             margin-top: 75px;
           "
         >
-          Analyze Dynamic
+          Analyze
         </h1>
         <hr style="width: 968px; border: 1px; border-top: 1px solid #e3e8ec" />
 
@@ -153,7 +71,7 @@
           <!-- Container will hold the submit button if a file is selected -->
         </div>
         <div>
-          <p id="output"></p>
+          <p id="output" style="min-width: 1000px;margin: 0;"></p>
         </div>
 
         <script>
@@ -168,7 +86,7 @@
             var formData = new FormData();
             formData.append("csvFile", file);
 
-            fetch("upload/", {
+            fetch("/summary/upload/", {
               method: "POST",
               body: formData,
             })
