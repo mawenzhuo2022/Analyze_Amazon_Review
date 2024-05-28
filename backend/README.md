@@ -35,7 +35,9 @@ git clone https://github.com/mawenzhuo2022/Analyze_Amazon_Review.git
 cd Analyze_Amazon_Review
 
 # Install required Python packages
-pip install -r requirements.txt
+pip install textblob
+pip install nltk
+pip install scikit-learn
 ```
 
 ## Methodology
@@ -57,11 +59,9 @@ The project uses the Amazon product review dataset, encompassing a wide range of
 - **Accuracy of Summarization**: The accuracy of the generated summaries is compared against human-crafted abstracts to ensure that the key points and sentiments of the original reviews are accurately captured.
 - **Precision of Aspect Identification**: The effectiveness of the aspect-based evaluation pipeline is measured by its ability to correctly identify and score the product aspects mentioned in reviews, using a human-annotated dataset as a benchmark.
 
-## Timeline
-- **Week 1**: Data preprocessing & API setup.
-- **Weeks 2-3**: Designing the prompt for the first pipeline.
-- **Weeks 3-4**: Designing the prompt for the second pipeline.
-- **Week 5**: Testing on different products.
+## Future Work
+- **Scalability**: Plans to scale the project to other e-commerce platforms and additional product categories.
+- **Advanced NLP Techniques**: Incorporating cutting-edge NLP techniques such as transformers and BERT for enhanced accuracy in summarization and aspect evaluation.
 
 ## Acknowledgements
 Special thanks to the contributors of large language models, including ChatGPT, for enhancing the readability and structure of this project proposal.
