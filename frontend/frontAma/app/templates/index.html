@@ -1,46 +1,71 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Amazon Review Analyze</title>
-
+	<meta charset="UTF-8">
+	<title>Amazon Review Analysis</title>
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+			font-family: 'Inter', sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #f4f4f9;
+		}
+		.container {
+			width: 100%;
+			max-width: 1200px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start; /* 居左对齐内部元素 */
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+			padding: 20px;
+			background: white;
+			border-radius: 8px;
+			margin-top: -15%; /* 设置容器距离顶部为视窗高度的40% */
+		}
+		.menu {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			gap: 10px;
+		}
+		a {
+			color: #656974;
+			text-decoration: none;
+			font-size: 18px;
+			line-height: 22px;
+			transition: color 0.3s;
+		}
+		a:hover {
+			color: #1a73e8;
+		}
+		.title {
+			color: #262930;
+			font-size: 36px;
+			margin: 20px 0;
+		}
+		hr {
+			width: 100%;
+			border: none;
+			height: 1px;
+			background-color: #e3e8ec;
+			margin-top: 10px;
+		}
+	</style>
 </head>
-
-<body style="width: 100vw; height: 100vh;">
-	<div style="width: 100%; height: 100%; display: flex; flex-direction: row;">
-		<div style="width: 337px; height: 100%; display: flex; flex-direction: column; gap: 15px; padding: 19px 30px 19px 30px;">
-
-			<div style="display: flex; flex-direction: column; width: 308px; height: 137px; padding: 0px 30px; gap: 2px;">
-				<h1 style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; line-height: 21.78px; color: #656973; margin-bottom: 2px;">Overview</h1>
-				<a href="/summary" 
-				target="_blank" 
-				title="Goes to summary"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Summarization</a>
-				<a href="/scoring" 
-				target="_blank" 
-				title="Goes to scoring"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Scoring</a>
-				<a href="/pioritize" 
-				target="_blank" 
-				title="Goes to pioritize"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze</a>
-				<a href="/pioritizD"
-				target="_blank" 
-				title="Goes to pioritize dynamic"
-				style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; line-height: 22px; letter-spacing: 0em; text-align: left; color: #656974; margin-bottom: 2px;">Analyze Dynamic</a>
-			</div>
-					
+<body>
+	<div class="container">
+		<h1 class="title">Amazon Review Analysis</h1>
+		<hr>
+		<div class="menu">
+			<a href="/summary" title="Goes to summary" target="_blank">Summarization</a>
+			<a href="/scoring" title="Goes to scoring" target="_blank">Scoring</a>
+			<a href="/prioritize" title="Goes to prioritize" target="_blank">Analyze</a>
+			<a href="/prioritizeD" title="Goes to prioritize dynamic" target="_blank">Analyze Dynamic</a>
 		</div>
-
-
-		<div style="width: 174px; height: 44px;">
-			<h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 36px; line-height: 43.57px; color: #262930; margin-bottom: 10px; margin-top: 75px;">Amazon Review Analyze</h1>
-			<hr style="width: 968px; border: 1px; border-top: 1px solid #E3E8EC;">
-		</div>
-		
-		
-		
 	</div>
 </body>
-
 </html>
